@@ -35,32 +35,12 @@ export default function WeddingInvite() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
   const audioRef = useRef(null);
-  const [imageIndex, setImageIndex] = useState(0);
-  const [imageFailed, setImageFailed] = useState(false);
-
-  const candidateImages = [
-    '/bhavna-devansh.jpg',
-    '/bhavna-devansh.jpeg',
-    '/bhavna-devansh.png',
-    '/bhavna-devansh.webp',
-    '/couple.jpg',
-    '/couple.jpeg',
-    '/couple.png',
-    '/bhavna_devansh.jpg',
-    '/bhavna_devansh.png',
-    '/bhavnadevansh.jpg',
-    '/background.jpg',
-    '/background.png',
-    '/PXL_20260913_074945826.PORTRAIT.jpg',
-    '/bg.jpg',
-    '/hero.jpg',
-  ];
+  const defaultFallbackImage = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80";
+  const [heroImageSrc, setHeroImageSrc] = useState('/background.jpg');
 
   const handleImageFallback = () => {
-    if (imageIndex < candidateImages.length - 1) {
-      setImageIndex((prev) => prev + 1);
-    } else {
-      setImageFailed(true);
+    if (heroImageSrc !== defaultFallbackImage) {
+      setHeroImageSrc(defaultFallbackImage);
     }
   };
 
@@ -230,15 +210,13 @@ export default function WeddingInvite() {
       <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden">
         {/* BACKGROUND IMAGE & OVERLAYS */}
         <div className="absolute inset-0 z-0">
-          {!imageFailed && (
-            <img 
-              src={candidateImages[imageIndex]} 
-              alt="Bhavna & Devansh" 
-              className="w-full h-full object-cover object-center filter brightness-[0.95]"
-              onError={handleImageFallback}
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf8f5]/85 via-[#faf8f5]/70 to-[#faf8f5]" />
+          <img 
+            src={heroImageSrc} 
+            alt="Bhavna & Devansh" 
+            className="w-full h-full object-cover object-center filter brightness-[0.92]"
+            onError={handleImageFallback}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf8f5]/70 via-[#faf8f5]/50 to-[#faf8f5]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,242,242,0.5)_0%,transparent_75%)] pointer-events-none" />
         </div>
         
