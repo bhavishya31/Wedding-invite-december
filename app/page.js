@@ -36,7 +36,7 @@ export default function WeddingInvite() {
   const [copiedShare, setCopiedShare] = useState(false);
   const audioRef = useRef(null);
   const defaultFallbackImage = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80";
-  const [heroImageSrc, setHeroImageSrc] = useState('/background.jpg');
+  const [heroImageSrc, setHeroImageSrc] = useState('/PXL_20260913_080626850.jpg');
 
   const handleImageFallback = () => {
     if (heroImageSrc !== defaultFallbackImage) {
