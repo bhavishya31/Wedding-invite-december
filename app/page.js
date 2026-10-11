@@ -49,9 +49,13 @@ export default function WeddingInvite() {
 
   const handleRSVP = async (e) => {
     e.preventDefault();
-    const FORMSPREE_ENDPOINT = "https://formspree.io";
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    if (!endpoint) {
+      setSubmitted(true);
+      return;
+    }
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(formData)
@@ -143,7 +147,7 @@ export default function WeddingInvite() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="relative flex flex-col md:flex-row items-start md:justify-between group">
             <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-rose-400 rounded-full transform -translate-x-[5px] top-2"></div>
             <div className="pl-10 md:pl-0 md:w-[45%] md:text-right order-1 md:order-3">
-              <span className="text-rose-500 text-sm font-semibold tracking-wider uppercase block mb-1">November 13</span>
+              <span className="text-rose-500 text-sm font-semibold tracking-wider uppercase block mb-1">December 4</span>
               <h3 className="text-xl font-medium text-gray-800">The Wedding Muhurtham</h3>
               <div className="flex items-center gap-1 text-gray-500 text-sm mt-1 justify-start md:justify-end">
                 <Clock size={14} /> <span>09:30 AM</span>
@@ -165,7 +169,7 @@ export default function WeddingInvite() {
           <p className="text-lg text-gray-700">Aura Banquet Hall</p>
           <p className="text-sm text-gray-500 font-sans mt-1">Aura Banquet, Giriraj Nagar, Dholai, Jaipur, Rajasthan 302020</p>
           <div className="mt-8 rounded-2xl overflow-hidden border border-stone-200 aspect-video max-w-2xl mx-auto">
-            <iframe src="https://google.com" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Venue Map"></iframe>
+            <iframe src="https://maps.google.com/maps?q=Aura+Banquet+Hall+Giriraj+Nagar+Dholai+Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" title="Venue Map"></iframe>
           </div>
         </motion.div>
       </section>
