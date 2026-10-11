@@ -49,7 +49,7 @@ export default function WeddingInvite() {
 
   const handleRSVP = async (e) => {
     e.preventDefault();
-    const FORMSPREE_ENDPOINT = "https://formspree.io"; // Insert Formspree id key link
+    const FORMSPREE_ENDPOINT = "https://formspree.io";
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
@@ -70,7 +70,7 @@ export default function WeddingInvite() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#333333] font-serif antialiased overflow-x-hidden relative">
       
-      {/* BACKGROUND AUDIO FLOATER */}
+      {/* FLOATING AUDIO TOGGLE */}
       <div className="fixed bottom-6 right-6 z-50">
         <button 
           onClick={toggleMusic}
@@ -90,7 +90,7 @@ export default function WeddingInvite() {
         </button>
       </div>
 
-      {/* HERO BANNER COVER CONTAINER */}
+      {/* HERO SECTION */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center">
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-2xl">
           <span className="text-sm uppercase tracking-[0.25em] text-gray-500 block">Save the Date</span>
@@ -105,7 +105,7 @@ export default function WeddingInvite() {
         </div>
       </section>
 
-      {/* COUNTDOWN TIMER COMPONENT BLOCK */}
+      {/* COUNTDOWN TIMER */}
       <section className="py-16 bg-white border-y border-stone-100">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-light tracking-widest text-gray-700 uppercase mb-8">Counting Down</h2>
@@ -120,7 +120,7 @@ export default function WeddingInvite() {
         </motion.div>
       </section>
 
-      {/* WEDDING ITINERARY CHRONOLOGY */}
+      {/* THE CELEBRATIONS TIMELINE */}
       <section className="py-24 max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-light text-center tracking-widest text-gray-800 uppercase mb-16">The Celebrations</h2>
         <div className="space-y-12 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-[1px] before:bg-rose-200">
@@ -157,7 +157,7 @@ export default function WeddingInvite() {
         </div>
       </section>
 
-      {/* PHYSICAL MAP LOCATION AREA */}
+      {/* THE VENUE MAP */}
       <section className="py-20 bg-white border-t border-stone-100">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-3xl mx-auto px-6 text-center">
           <MapPin className="mx-auto text-rose-400 mb-4" size={32} />
@@ -170,46 +170,9 @@ export default function WeddingInvite() {
         </motion.div>
       </section>
 
-      {/* CLIENT GUEST RSVP MODULE */}
-      <section className="py-24 max-w-xl mx-auto px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-[#faf8f5] rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200/60 text-center">
-          <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
-          <h2 className="text-2xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
-          <p className="text-sm text-gray-500 font-sans mb-8">Kindly respond by October 25, 2026</p>
-
-          {/* Day 2: Wedding Event */}
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            className="relative flex flex-col md:flex-row items-start md:justify-between group"
-          >
-            <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-rose-400 rounded-full transform -translate-x-[5px] top-2"></div>
-            <div className="pl-10 md:pl-0 md:w-[45%] md:text-right order-1 md:order-3">
-              <span className="text-rose-500 text-sm font-semibold tracking-wider uppercase block mb-1">November 13</span>
-              <h3 className="text-xl font-medium text-gray-800">The Wedding Muhurtham</h3>
-              <div className="flex items-center gap-1 text-gray-500 text-sm mt-1 justify-start md:justify-end">
-                <Clock size={14} /> <span>09:30 AM</span>
-              </div>
-            </div>
-            <div className="hidden md:block w-[10%] order-2"></div>
-            <div className="pl-10 md:pl-0 md:w-[45%] mt-2 md:mt-0 text-gray-600 font-sans text-sm order-3 md:order-1">
-              The main wedding ceremony followed by a traditional lunch feast. Your blessings are highly anticipated.
-            </div>
-          </motion.div>
-
-
-
       {/* RSVP FORM */}
       <section className="py-24 max-w-xl mx-auto px-6">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="bg-[#faf8f5] rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200/60 text-center"
-        >
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-[#faf8f5] rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200/60 text-center" id="rsvp">
           <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
           <h2 className="text-2xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
           <p className="text-sm text-gray-500 font-sans mb-8">Kindly respond by October 25, 2026</p>
@@ -222,47 +185,30 @@ export default function WeddingInvite() {
           ) : (
             <form onSubmit={handleRSVP} className="space-y-5 text-left font-sans text-sm">
               <div>
-                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Your Name</label>
-                <input type="text" required className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300" placeholder="Full name please" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
-              </div>
+Your Name
+<input type="text" required className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300" placeholder="Full name please" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
+Attendance
+<button type="button" className={py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}} onClick={() => setFormData({...formData, status: 'attending'})}>Joyfully Attend
+<button type="button" className={py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}} onClick={() => setFormData({...formData, status: 'declining'})}>Regretfully Decline
 
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Attendance</label>
-                <div className="grid grid-cols-2 gap-3">
-                  <button type="button" className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}`} onClick={() => setFormData({...formData, status: 'attending'})}>Joyfully Attend</button>
-                  <button type="button" className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}`} onClick={() => setFormData({...formData, status: 'declining'})}>Regretfully Decline</button>
-                </div>
-              </div>
+{formData.status === 'attending' && (
+Number of Guests
+<select className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none" value={formData.guests} onChange={(e) => setFormData({...formData, guests: e.target.value})}>
+{[1, 2, 3, 4, 5].map(n => (
+{n} {n === 1 ? 'Person' : 'People'}
+))}
 
-              {formData.status === 'attending' && (
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Number of Guests</label>
-                  <select className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none" value={formData.guests} onChange={(e) => setFormData({...formData, guests: e.target.value})}>
-                    {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} {n === 1 ? 'Person' : 'People'}</option>)}
-                  </select>
-                </div>
-              )}
 
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Warm Wishes</label>
-                <textarea rows="3" className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300 resize-none" placeholder="Write a message to the couple..." value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} />
-              </div>
+)}
+Warm Wishes
+<textarea rows="3" className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300 resize-none" placeholder="Write a message to the couple..." value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} />
+Submit Response
 
-              <button type="submit" className="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-4 rounded-xl tracking-widest uppercase text-xs mt-4">
-                Submit Response
-              </button>
-            </form>
-          )}
-        </motion.div>
-      </section>
 
-      {/* FOOTER */}
-      <footer className="py-8 bg-stone-50 border-t border-stone-200/60 text-center text-xs text-gray-400 tracking-widest font-sans">
-        MADE WITH ❤️ FOR PRIYANKA &amp; GIRISH
-      </footer>
+)}
+</motion.div>
+{/* FOOTER */}
 
-    </div>
-  );
+MADE WITH ❤️ FOR PRIYANKA & GIRISH
+);
 }
-
-
