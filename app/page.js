@@ -35,6 +35,33 @@ export default function WeddingInvite() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
   const audioRef = useRef(null);
+  const [imageIndex, setImageIndex] = useState(0);
+  const [imageFailed, setImageFailed] = useState(false);
+
+  const candidateImages = [
+    '/bhavna-devansh.jpg',
+    '/bhavna-devansh.jpeg',
+    '/bhavna-devansh.png',
+    '/bhavna-devansh.webp',
+    '/couple.jpg',
+    '/couple.jpeg',
+    '/couple.png',
+    '/bhavna_devansh.jpg',
+    '/bhavna_devansh.png',
+    '/bhavnadevansh.jpg',
+    '/background.jpg',
+    '/background.png',
+    '/bg.jpg',
+    '/hero.jpg',
+  ];
+
+  const handleImageFallback = () => {
+    if (imageIndex < candidateImages.length - 1) {
+      setImageIndex((prev) => prev + 1);
+    } else {
+      setImageFailed(true);
+    }
+  };
 
   useEffect(() => {
     audioRef.current = new Audio('/weddingsong.mp3'); 
@@ -200,7 +227,19 @@ export default function WeddingInvite() {
 
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,242,242,0.6)_0%,transparent_70%)] pointer-events-none" />
+        {/* BACKGROUND IMAGE & OVERLAYS */}
+        <div className="absolute inset-0 z-0">
+          {!imageFailed && (
+            <img 
+              src={candidateImages[imageIndex]} 
+              alt="Bhavna & Devansh" 
+              className="w-full h-full object-cover object-center filter brightness-[0.95]"
+              onError={handleImageFallback}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf8f5]/85 via-[#faf8f5]/70 to-[#faf8f5]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,242,242,0.5)_0%,transparent_75%)] pointer-events-none" />
+        </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
           <span className="text-xs md:text-sm font-sans tracking-[0.35em] text-rose-500 uppercase block font-medium">
