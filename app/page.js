@@ -155,7 +155,7 @@ export default function WeddingInvite() {
             </div>
             <div className="hidden md:block w-[10%] order-2"></div>
             <div className="pl-10 md:pl-0 md:w-[45%] mt-2 md:mt-0 text-gray-600 font-sans text-sm order-3 md:order-1">
-              The main wedding ceremony followed by a traditional dinner feast. Your blessings are highly anticipated.
+              Join us for the wedding ceremony and traditional dinner as we celebrate the beginning of a new chapter. Your presence and blessings will make our day truly special.
             </div>
           </motion.div>
         </div>
