@@ -5,7 +5,7 @@ import { Clock, MapPin, Heart, ChevronDown, Volume2, VolumeX } from 'lucide-reac
 import { motion } from 'framer-motion';
 
 export default function WeddingInvite() {
-  const weddingDate = new Date('2026-11-12T12:00:00').getTime();
+  const weddingDate = new Date('2026-12-04T07:00:00').getTime();
 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [formData, setFormData] = useState({ name: '', status: 'attending', guests: '1', message: '' });
@@ -95,7 +95,7 @@ export default function WeddingInvite() {
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-2xl">
           <span className="text-sm uppercase tracking-[0.25em] text-gray-500 block">Save the Date</span>
           <h1 className="text-5xl md:text-7xl font-light tracking-wide text-gray-800">
-            Priyanka <span className="text-rose-400 font-sans block md:inline my-2 md:my-0 md:mx-2">&amp;</span> Girish
+            BHAVNA <span className="text-rose-400 font-sans block md:inline my-2 md:my-0 md:mx-2">&amp;</span> DEVANSH
           </h1>
           <div className="w-16 h-[1px] bg-rose-300 mx-auto my-4"></div>
           <p className="text-xl md:text-2xl text-gray-600 font-light italic">12 – 13 November 2026</p>
@@ -185,22 +185,78 @@ export default function WeddingInvite() {
           ) : (
             <form onSubmit={handleRSVP} className="space-y-5 text-left font-sans text-sm">
               <div>
+                <label className="block text-gray-700 mb-2">Your Name</label>
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300"
+                  placeholder="Full name please"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                />
+              </div>
+
               <div>
-                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Attendance</label>
+                <label className="block text-gray-700 mb-2">Attendance</label>
                 <div className="grid grid-cols-2 gap-3">
-                  <button 
-                    type="button" 
-                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}`} 
-                    onClick={() => setFormData({...formData, status: 'attending'})}
+                  <button
+                    type="button"
+                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}`}
+                    onClick={() => setFormData({ ...formData, status: 'attending' })}
                   >
                     Joyfully Attend
                   </button>
-                  <button 
-                    type="button" 
-                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}`} 
-                    onClick={() => setFormData({...formData, status: 'declining'})}
+                  <button
+                    type="button"
+                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}`}
+                    onClick={() => setFormData({ ...formData, status: 'declining' })}
                   >
                     Regretfully Decline
                   </button>
                 </div>
               </div>
+
+              {formData.status === 'attending' && (
+                <div>
+                  <label className="block text-gray-700 mb-2">Number of Guests</label>
+                  <select
+                    className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none"
+                    value={formData.guests}
+                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
+                  >
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <option key={n} value={n}>{n} {n === 1 ? 'Person' : 'People'}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              <div>
+                <label className="block text-gray-700 mb-2">Warm Wishes</label>
+                <textarea
+                  rows="3"
+                  className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300 resize-none"
+                  placeholder="Write a message to the couple..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-3.5 rounded-xl transition-colors shadow-sm"
+              >
+                Submit Response
+              </button>
+            </form>
+          )}
+        </motion.div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-8 text-center text-xs text-gray-400 font-sans tracking-widest uppercase">
+        MADE WITH ❤️ FOR BHAVNA &amp; DEVANSH
+      </footer>
+    </div>
+  );
+}
