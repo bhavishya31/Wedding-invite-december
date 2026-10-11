@@ -185,30 +185,22 @@ export default function WeddingInvite() {
           ) : (
             <form onSubmit={handleRSVP} className="space-y-5 text-left font-sans text-sm">
               <div>
-Your Name
-<input type="text" required className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300" placeholder="Full name please" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
-Attendance
-<button type="button" className={py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}} onClick={() => setFormData({...formData, status: 'attending'})}>Joyfully Attend
-<button type="button" className={py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}} onClick={() => setFormData({...formData, status: 'declining'})}>Regretfully Decline
-
-{formData.status === 'attending' && (
-Number of Guests
-<select className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none" value={formData.guests} onChange={(e) => setFormData({...formData, guests: e.target.value})}>
-{[1, 2, 3, 4, 5].map(n => (
-{n} {n === 1 ? 'Person' : 'People'}
-))}
-
-
-)}
-Warm Wishes
-<textarea rows="3" className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300 resize-none" placeholder="Write a message to the couple..." value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} />
-Submit Response
-
-
-)}
-</motion.div>
-{/* FOOTER */}
-
-MADE WITH ❤️ FOR PRIYANKA & GIRISH
-);
-}
+              <div>
+                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Attendance</label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button 
+                    type="button" 
+                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}`} 
+                    onClick={() => setFormData({...formData, status: 'attending'})}
+                  >
+                    Joyfully Attend
+                  </button>
+                  <button 
+                    type="button" 
+                    className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}`} 
+                    onClick={() => setFormData({...formData, status: 'declining'})}
+                  >
+                    Regretfully Decline
+                  </button>
+                </div>
+              </div>
