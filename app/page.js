@@ -177,9 +177,25 @@ export default function WeddingInvite() {
           <h2 className="text-2xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
           <p className="text-sm text-gray-500 font-sans mb-8">Kindly respond by October 25, 2026</p>
 
-          {submitted ? (
-            <div className="py-8">
-              <p className="text-xl text-rose-600 font-medium italic">Thank You!</p>
-              <p className="text-gray-600 text-sm font-sans mt-2">Your response has been saved directly to our list.</p>
+          {/* Day 2: Wedding Event */}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="relative flex flex-col md:flex-row items-start md:justify-between group"
+          >
+            <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-rose-400 rounded-full transform -translate-x-[5px] top-2"></div>
+            <div className="pl-10 md:pl-0 md:w-[45%] md:text-right order-1 md:order-3">
+              <span className="text-rose-500 text-sm font-semibold tracking-wider uppercase block mb-1">November 13</span>
+              <h3 className="text-xl font-medium text-gray-800">The Wedding Muhurtham</h3>
+              <div className="flex items-center gap-1 text-gray-500 text-sm mt-1 justify-start md:justify-end">
+                <Clock size={14} /> <span>09:30 AM</span>
+              </div>
             </div>
-          ) : (
+            <div className="hidden md:block w-[10%] order-2"></div>
+            <div className="pl-10 md:pl-0 md:w-[45%] mt-2 md:mt-0 text-gray-600 font-sans text-sm order-3 md:order-1">
+              The main wedding ceremony followed by a traditional lunch feast. Your blessings are highly anticipated.
+            </div>
+          </motion.div>
+
