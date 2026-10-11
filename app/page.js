@@ -199,3 +199,70 @@ export default function WeddingInvite() {
             </div>
           </motion.div>
 
+
+
+      {/* RSVP FORM */}
+      <section className="py-24 max-w-xl mx-auto px-6">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="bg-[#faf8f5] rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200/60 text-center"
+        >
+          <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
+          <h2 className="text-2xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
+          <p className="text-sm text-gray-500 font-sans mb-8">Kindly respond by October 25, 2026</p>
+
+          {submitted ? (
+            <div className="py-8">
+              <p className="text-xl text-rose-600 font-medium italic">Thank You!</p>
+              <p className="text-gray-600 text-sm font-sans mt-2">Your response has been saved directly to our list.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleRSVP} className="space-y-5 text-left font-sans text-sm">
+              <div>
+                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Your Name</label>
+                <input type="text" required className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300" placeholder="Full name please" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
+              </div>
+
+              <div>
+                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Attendance</label>
+                <div className="grid grid-cols-2 gap-3">
+                  <button type="button" className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'attending' ? 'bg-rose-500 text-white border-rose-500' : 'bg-white border-stone-200 text-gray-700'}`} onClick={() => setFormData({...formData, status: 'attending'})}>Joyfully Attend</button>
+                  <button type="button" className={`py-3 px-4 rounded-xl border text-center ${formData.status === 'declining' ? 'bg-stone-600 text-white border-stone-600' : 'bg-white border-stone-200 text-gray-700'}`} onClick={() => setFormData({...formData, status: 'declining'})}>Regretfully Decline</button>
+                </div>
+              </div>
+
+              {formData.status === 'attending' && (
+                <div>
+                  <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Number of Guests</label>
+                  <select className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none" value={formData.guests} onChange={(e) => setFormData({...formData, guests: e.target.value})}>
+                    {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n} {n === 1 ? 'Person' : 'People'}</option>)}
+                  </select>
+                </div>
+              )}
+
+              <div>
+                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Warm Wishes</label>
+                <textarea rows="3" className="w-full bg-white border border-stone-200 rounded-xl px-4 py-3 focus:outline-none focus:border-rose-300 resize-none" placeholder="Write a message to the couple..." value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} />
+              </div>
+
+              <button type="submit" className="w-full bg-gray-800 hover:bg-gray-900 text-white font-medium py-4 rounded-xl tracking-widest uppercase text-xs mt-4">
+                Submit Response
+              </button>
+            </form>
+          )}
+        </motion.div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-8 bg-stone-50 border-t border-stone-200/60 text-center text-xs text-gray-400 tracking-widest font-sans">
+        MADE WITH ❤️ FOR PRIYANKA &amp; GIRISH
+      </footer>
+
+    </div>
+  );
+}
+
+
