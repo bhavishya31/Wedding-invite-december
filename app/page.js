@@ -51,6 +51,7 @@ export default function WeddingInvite() {
     '/bhavnadevansh.jpg',
     '/background.jpg',
     '/background.png',
+    '/PXL_20260913_074945826.PORTRAIT.jpg',
     '/bg.jpg',
     '/hero.jpg',
   ];
