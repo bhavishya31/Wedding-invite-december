@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Priyanka & Girish - Wedding Invitation",
+  title: "Bhavna & Devansh - Wedding Invitation",
   description: "Join us in celebrating our wedding story.",
 };
 
