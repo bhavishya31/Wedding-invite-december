@@ -150,12 +150,12 @@ export default function WeddingInvite() {
               <span className="text-rose-500 text-sm font-semibold tracking-wider uppercase block mb-1">December 4</span>
               <h3 className="text-xl font-medium text-gray-800">The Wedding Muhurtham</h3>
               <div className="flex items-center gap-1 text-gray-500 text-sm mt-1 justify-start md:justify-end">
-                <Clock size={14} /> <span>09:30 AM</span>
+                <Clock size={14} /> <span>07:00 PM</span>
               </div>
             </div>
             <div className="hidden md:block w-[10%] order-2"></div>
             <div className="pl-10 md:pl-0 md:w-[45%] mt-2 md:mt-0 text-gray-600 font-sans text-sm order-3 md:order-1">
-              The main wedding ceremony followed by a traditional lunch feast. Your blessings are highly anticipated.
+              The main wedding ceremony followed by a traditional dinner feast. Your blessings are highly anticipated.
             </div>
           </motion.div>
         </div>
