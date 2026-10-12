@@ -162,13 +162,13 @@ const WeddingMuhurthamIcon = () => (
 
 const CELEBRATIONS = [
   {
-    date: "December 3, 2026",
+    date: "November 26, 2026",
     dayLabel: "Day 01",
     dayKey: "day1",
     events: [
       {
         id: "ganesh-puja",
-        time: "10:00 AM",
+        time: "7:00 AM",
         title: "Ganesh Puja & Mandap Mahurat",
         tagline: "Auspicious Beginnings",
         attire: "Traditional Yellow / Pavitra Ethnic",
@@ -180,7 +180,7 @@ const CELEBRATIONS = [
       },
       {
         id: "mehendi",
-        time: "01:30 PM",
+        time: "10:00 AM",
         title: "Mehendi Ceremony",
         tagline: "Henna, Folk & Celebrations",
         attire: "Floral Vibes & Shades of Green",
@@ -192,10 +192,10 @@ const CELEBRATIONS = [
       },
       {
         id: "haldi",
-        time: "04:30 PM",
+        time: "11:00 AM",
         title: "Haldi Rasam",
         tagline: "Marigold Showers & Turmeric",
-        attire: "Sunshine Yellow & Bright Hues",
+        attire: "Shades of Pink",
         desc: "A lively ritual of auspicious turmeric paste, flower petal showers, laughter, and blessings.",
         logo: <HaldiIcon />,
         badgeColor: "bg-yellow-500/15 text-yellow-900 border-yellow-300",
@@ -204,10 +204,10 @@ const CELEBRATIONS = [
       },
       {
         id: "sangeet",
-        time: "07:30 PM onwards",
+        time: "05:00 PM onwards",
         title: "Ring Ceremony & Sangeet Night",
         tagline: "Beats, Rings & Revelry",
-        attire: "Glamorous Indo-Western / Evening Cocktail",
+        attire: "Dark Shades or Shimmer",
         desc: "An electrifying night celebrating the exchange of rings, choreographed dances, musical beats, and a dinner feast.",
         logo: <SangeetIcon />,
         badgeColor: "bg-rose-500/10 text-rose-800 border-rose-300",
@@ -222,11 +222,23 @@ const CELEBRATIONS = [
     dayKey: "day2",
     events: [
       {
+        id: "carnival",
+        time: "10:00 AM",
+        title: "Carnival Dance",
+        tagline: "Where Love Meets the Carnival Spirit",
+        attire: "Rajasthani Outfit",
+        desc: "Step Into the Carnival of Love, where Every Beat Tells a Love Story.",
+        logo: <CarnivalIcon />,
+        badgeColor: "bg-orange-500/10 text-orange-900 border-orange-300",
+        ringColor: "ring-orange-200/80 bg-orange-50/70",
+        calDates: "20261204T123000Z/20261204T133000Z"
+      },      
+      {
         id: "baraat-swagat",
         time: "06:00 PM",
         title: "Baraat Swagat & Dhol Tasha",
         tagline: "Beats, Brass & Grand Welcome",
-        attire: "Regal Sherwani / Bandhgala & Vibrant Safa",
+        attire: "Royal Elegance / Bandhgala & Vibrant Safa",
         desc: "Joyous arrival of the groom and celebratory Baraat procession with live Punjabi dhol beats, nagada, brass brass band, and warm Milni welcome by the bride's family.",
         logo: <BaraatIcon />,
         badgeColor: "bg-orange-500/10 text-orange-900 border-orange-300",
@@ -235,10 +247,10 @@ const CELEBRATIONS = [
       },
       {
         id: "wedding",
-        time: "07:00 PM onwards",
+        time: "09:00 PM onwards",
         title: "The Wedding Muhurtham (Baraat & Phere)",
         tagline: "The Sacred Seven Vows",
-        attire: "Royal Traditional / Grand Ethnic Splendor",
+        attire: "Royal Elegance / Bandhgala & Vibrant Safa",
         desc: "The arrival of the Baraat, exchange of Varmala, and the sacred Seven Vows around the holy fire, followed by a royal feast.",
         logo: <WeddingMuhurthamIcon />,
         badgeColor: "bg-red-500/10 text-red-900 border-red-300",
