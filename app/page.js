@@ -203,18 +203,6 @@ const CELEBRATIONS = [
     dayKey: "day1",
     events: [
       {
-        id: "ganesh-puja",
-        time: "7:00 AM",
-        title: "Ganesh Puja & Mandap Mahurat",
-        tagline: "Auspicious Beginnings",
-        attire: "Traditional Yellow / Pavitra Ethnic",
-        desc: "Seeking the divine blessings of Lord Ganesha to mark the auspicious beginning of our wedding festivities.",
-        logo: <GaneshPujaIcon />,
-        badgeColor: "bg-amber-500/10 text-amber-800 border-amber-300",
-        ringColor: "ring-amber-200/80 bg-amber-50/70",
-        calDates: "20261203T043000Z/20261203T073000Z"
-      },
-      {
         id: "mehendi",
         time: "10:00 AM",
         title: "Mehendi Ceremony",
