@@ -213,7 +213,7 @@ export default function WeddingInvite() {
           title: "Ganesh Puja & Mandap Mahurat",
           tagline: "Auspicious Beginnings",
           attire: "Traditional Yellow / Pavitra Ethnic",
-          desc: "Seeking the divine blessings of Lord Ganesha to mark the auspicious beginning of our wedding festivities."
+          desc: "Seeking the divine blessings of Lord Ganesha to mark the auspicious beginning of our wedding festivities.",
           logo: <GaneshPujaIcon />,
           badgeColor: "bg-amber-500/10 text-amber-800 border-amber-300",
           ringColor: "ring-amber-200/80 bg-amber-50/70",
@@ -225,7 +225,7 @@ export default function WeddingInvite() {
           title: "Mehendi Ceremony",
           tagline: "Henna, Folk & Celebrations",
           attire: "Floral Vibes & Shades of Green",
-          desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration."
+          desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
           logo: <MehendiIcon />,
           badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
           ringColor: "ring-emerald-200/80 bg-emerald-50/70",
@@ -237,7 +237,7 @@ export default function WeddingInvite() {
           title: "Haldi Rasam",
           tagline: "Marigold Showers & Turmeric",
           attire: "Sunshine Yellow & Bright Hues",
-          desc: "A lively ritual of auspicious turmeric paste, flower petal showers, laughter, and blessings."
+          desc: "A lively ritual of auspicious turmeric paste, flower petal showers, laughter, and blessings.",
           logo: <HaldiIcon />,
           badgeColor: "bg-yellow-500/15 text-yellow-900 border-yellow-300",
           ringColor: "ring-yellow-200/80 bg-yellow-50/70",
@@ -249,7 +249,7 @@ export default function WeddingInvite() {
           title: "Ring Ceremony & Sangeet Night",
           tagline: "Beats, Rings & Revelry",
           attire: "Glamorous Indo-Western / Evening Cocktail",
-          desc: "An electrifying night celebrating the exchange of rings, choreographed dances, musical beats, and a dinner feast."
+          desc: "An electrifying night celebrating the exchange of rings, choreographed dances, musical beats, and a dinner feast.",
           logo: <SangeetIcon />,
           badgeColor: "bg-rose-500/10 text-rose-800 border-rose-300",
           ringColor: "ring-rose-200/80 bg-rose-50/70",
@@ -268,7 +268,7 @@ export default function WeddingInvite() {
           title: "The Wedding Muhurtham (Baraat & Phere)",
           tagline: "The Sacred Seven Vows",
           attire: "Royal Traditional / Grand Ethnic Splendor",
-          desc: "The arrival of the Baraat, exchange of Varmala, and the sacred Seven Vows around the holy fire, followed by a royal feast."
+          desc: "The arrival of the Baraat, exchange of Varmala, and the sacred Seven Vows around the holy fire, followed by a royal feast.",
           logo: <WeddingMuhurthamIcon />,
           badgeColor: "bg-red-500/10 text-red-900 border-red-300",
           ringColor: "ring-red-200/80 bg-red-50/70",
