@@ -22,6 +22,54 @@ import { motion } from 'framer-motion';
 const MEHENDI_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
 const HALDI_ANGLES = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
 
+/* ROYAL RAJASTHANI MOTIF ARTWORK (Elephant, Camel, Horse) */
+const RoyalElephant = ({ className = "w-12 h-12" }) => (
+  <svg viewBox="0 0 100 80" className={className} fill="currentColor">
+    <path d="M78 48 C78 38 72 30 60 28 C56 22 47 18 36 18 C24 18 16 26 14 36 C10 37 6 42 6 47 C6 53 10 57 15 57 C15 67 19 72 23 72 C27 72 28 66 28 58 C32 58 36 58 40 58 C40 66 42 72 46 72 C50 72 52 66 52 58 C56 58 60 58 64 57 C64 66 66 72 70 72 C74 72 76 66 76 56 C82 56 86 52 86 46 C86 38 80 32 76 32 C74 32 74 36 76 40 C77 42 76 46 73 47 C70 48 68 45 68 41 C68 34 71 27 65 24 C59 21 54 24 51 28 C55 31 58 36 58 42 C58 50 51 56 43 56 C37 56 32 52 32 46 C32 38 38 31 46 29 C44 26 40 25 36 25 C28 25 22 30 20 37 C24 37 27 40 27 44 C27 48 24 51 20 51 C19 51 18 50 17 49 C17 56 20 63 24 64 L24 55 C24 53 26 51 28 51 C30 51 32 53 32 55 L32 64 C36 64 40 64 44 64 L44 55 C44 53 46 51 48 51 C50 51 52 53 52 55 L52 64 C56 64 60 63 63 61 L63 54 C63 52 65 50 67 50 C69 50 71 52 71 54 L71 60 C74 58 76 54 77 50 Z" />
+    {/* Decorative Royal Howdah & Ambari */}
+    <path d="M34 16 L44 16 L42 8 L36 8 Z" fill="#D97706" />
+    <circle cx="39" cy="6" r="2.5" fill="#DC2626" />
+    <path d="M28 26 C28 26 36 34 46 26 L48 38 C38 43 32 37 28 38 Z" fill="#F59E0B" opacity="0.9" />
+  </svg>
+);
+
+const RoyalCamel = ({ className = "w-12 h-12" }) => (
+  <svg viewBox="0 0 100 90" className={className} fill="currentColor">
+    <path d="M82 14 C78 12 73 14 70 18 L64 28 C61 34 57 37 52 35 C48 33 46 27 43 27 C39 27 36 32 33 36 C30 40 24 43 18 43 C12 43 7 48 7 54 C7 60 11 65 17 65 C19 72 21 82 24 82 C27 82 28 75 29 67 C34 67 40 67 45 67 C46 74 48 82 51 82 C54 82 55 74 56 66 C61 65 67 63 71 59 C74 65 76 77 79 77 C82 77 83 70 83 61 C85 57 87 52 87 47 C87 38 83 33 80 30 L84 20 C86 16 85 14 82 14 Z" />
+    {/* Royal Saddle Harness */}
+    <path d="M36 38 C39 34 47 34 50 38 L48 48 C43 45 39 46 36 48 Z" fill="#DC2626" />
+    <circle cx="76" cy="18" r="2" fill="#FEF08A" />
+  </svg>
+);
+
+const RoyalHorse = ({ className = "w-12 h-12" }) => (
+  <svg viewBox="0 0 100 90" className={className} fill="currentColor">
+    <path d="M78 12 C74 12 70 15 67 20 L58 35 C52 37 46 35 41 33 C33 30 25 35 20 42 C16 48 14 55 12 63 C10 70 6 75 6 78 C9 78 14 74 17 68 C19 75 22 84 26 84 C29 84 31 77 32 68 C38 68 44 68 50 67 C51 74 53 84 57 84 C60 84 62 76 63 67 C68 66 73 63 77 58 C79 66 82 78 86 78 C89 78 90 70 89 60 C92 53 93 45 92 37 C91 29 85 22 82 18 L84 14 C85 12 82 12 78 12 Z" />
+    {/* Royal Plume / Kalgi */}
+    <path d="M76 8 C78 4 82 4 82 7 C82 10 78 11 76 8 Z" fill="#DC2626" />
+    <path d="M48 38 C54 44 64 42 67 37 L69 47 C63 50 54 50 47 45 Z" fill="#F59E0B" />
+  </svg>
+);
+
+/* ORNAMENTAL CORNER BORDER COMPONENT */
+const RoyalCorner = ({ position = "top-left" }) => {
+  const styles = {
+    "top-left": "top-2 left-2",
+    "top-right": "top-2 right-2 rotate-90",
+    "bottom-left": "bottom-2 left-2 -rotate-90",
+    "bottom-right": "bottom-2 right-2 rotate-180"
+  };
+  return (
+    <div className={`absolute ${styles[position]} pointer-events-none w-7 h-7 text-amber-500/50`}>
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M2 38 L2 14 C2 7.37 7.37 2 14 2 L38 2" />
+        <path d="M8 38 L8 16 C8 11.58 11.58 8 16 8 L38 8" strokeDasharray="2 3" />
+        <circle cx="16" cy="16" r="3" fill="currentColor" fillOpacity="0.4" />
+      </svg>
+    </div>
+  );
+};
+
 /* CEREMONY LOGO ICONS */
 const GaneshPujaIcon = () => (
   <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
@@ -76,6 +124,26 @@ const SangeetIcon = () => (
     <ellipse cx="20" cy="44" rx="2" ry="6" fill="#BE185D" />
     <ellipse cx="44" cy="44" rx="2" ry="6" fill="#BE185D" />
     <path d="M20 38 L44 50 M20 50 L44 38 M20 44 L44 44" stroke="#9D174D" strokeWidth="1" />
+  </svg>
+);
+
+/* BARAAT & DHOL PROCESSION ICON */
+const BaraatIcon = () => (
+  <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
+    {/* Dhol Barrel */}
+    <ellipse cx="32" cy="32" rx="14" ry="20" transform="rotate(35 32 32)" fill="#991B1B" stroke="#F59E0B" strokeWidth="1.8" />
+    <ellipse cx="20" cy="23" rx="7" ry="12" transform="rotate(35 20 23)" fill="#FEF3C7" stroke="#B45309" strokeWidth="1.5" />
+    <ellipse cx="44" cy="41" rx="7" ry="12" transform="rotate(35 44 41)" fill="#FDE68A" stroke="#B45309" strokeWidth="1.5" />
+    {/* Dhol Ropes / Bracing */}
+    <path d="M22 14 L42 32 M25 31 L45 50 M16 26 L36 46" stroke="#FEF08A" strokeWidth="1.2" strokeLinecap="round" />
+    {/* Drumsticks / Danka & Chhari */}
+    <path d="M10 18 L26 27" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="10" cy="18" r="2.5" fill="#DC2626" />
+    <path d="M12 40 L28 35" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
+    {/* Musical Celebration Sparkles */}
+    <circle cx="48" cy="16" r="2" fill="#F59E0B" />
+    <circle cx="54" cy="24" r="1.5" fill="#EF4444" />
+    <circle cx="44" cy="12" r="1.5" fill="#F59E0B" />
   </svg>
 );
 
@@ -154,6 +222,18 @@ const CELEBRATIONS = [
     dayKey: "day2",
     events: [
       {
+        id: "baraat-swagat",
+        time: "06:00 PM",
+        title: "Baraat Swagat & Dhol Tasha",
+        tagline: "Beats, Brass & Grand Welcome",
+        attire: "Regal Sherwani / Bandhgala & Vibrant Safa",
+        desc: "Joyous arrival of the groom and celebratory Baraat procession with live Punjabi dhol beats, nagada, brass brass band, and warm Milni welcome by the bride's family.",
+        logo: <BaraatIcon />,
+        badgeColor: "bg-orange-500/10 text-orange-900 border-orange-300",
+        ringColor: "ring-orange-200/80 bg-orange-50/70",
+        calDates: "20261204T123000Z/20261204T133000Z"
+      },
+      {
         id: "wedding",
         time: "07:00 PM onwards",
         title: "The Wedding Muhurtham (Baraat & Phere)",
@@ -177,6 +257,7 @@ const fadeInUp = {
 export default function WeddingInvite() {
   const weddingDate = new Date('2026-12-03T10:00:00Z').getTime();
   const [isMounted, setIsMounted] = useState(false);
+  const [isInvitationOpened, setIsInvitationOpened] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [formData, setFormData] = useState({ 
@@ -193,7 +274,7 @@ export default function WeddingInvite() {
   const [copiedShare, setCopiedShare] = useState(false);
   const audioRef = useRef(null);
   const [activeDayFilter, setActiveDayFilter] = useState('all');
-  const defaultFallbackImage = "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80";
+  const defaultFallbackImage = "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=2000&q=80";
   const [heroImageSrc, setHeroImageSrc] = useState('/hero.jpg');
 
   const handleImageFallback = () => {
@@ -227,6 +308,15 @@ export default function WeddingInvite() {
       if (audioRef.current) audioRef.current.pause();
     };
   }, [weddingDate]);
+
+  const handleOpenInvitation = () => {
+    setIsInvitationOpened(true);
+    if (audioRef.current && !isPlaying) {
+      audioRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    }
+  };
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
@@ -284,8 +374,67 @@ export default function WeddingInvite() {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Bhavna & Devansh Wedding Celebrations")}&dates=20261203T043000Z/20261204T183000Z&details=${encodeURIComponent("Join us in celebrating the wedding festivities of Bhavna and Devansh at Aura Banquet Hall, Jaipur!")}&location=${encodeURIComponent("Aura Banquet Hall, Giriraj Nagar, Dholai, Jaipur, Rajasthan 302020")}`;
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#333333] font-serif antialiased overflow-x-hidden relative">
+    <div className="min-h-screen bg-[#faf7f2] text-[#333333] font-serif antialiased overflow-x-hidden relative selection:bg-rose-100 selection:text-rose-900">
       
+      {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
+      {!isInvitationOpened && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-md transition-all duration-700">
+          <div className="relative w-full max-w-lg bg-[#fffdf9] rounded-3xl p-8 md:p-12 text-center border-4 border-amber-300/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+            <RoyalCorner position="top-left" />
+            <RoyalCorner position="top-right" />
+            <RoyalCorner position="bottom-left" />
+            <RoyalCorner position="bottom-right" />
+
+            {/* Floating Heritage Watermark Icons in Card */}
+            <div className="absolute top-4 left-6 opacity-15 text-amber-800 pointer-events-none">
+              <RoyalElephant className="w-12 h-12" />
+            </div>
+            <div className="absolute top-4 right-6 opacity-15 text-amber-800 pointer-events-none">
+              <RoyalHorse className="w-12 h-12" />
+            </div>
+
+            <div className="relative z-10 space-y-4">
+              <span className="text-xs font-sans tracking-[0.35em] text-rose-600 uppercase font-bold block">
+                ॥ श्री गणेशाय नमः ॥
+              </span>
+
+              <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto" />
+
+              <p className="text-xs tracking-[0.3em] font-sans text-stone-500 uppercase">
+                Royal Wedding Invitation
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-light text-stone-900 tracking-wide">
+                Bhavna <span className="text-rose-500 font-serif">&amp;</span> Devansh
+              </h2>
+
+              <p className="text-xs md:text-sm text-stone-600 italic font-serif">
+                Cordially invite you to grace the auspicious celebrations of their holy union in Jaipur.
+              </p>
+
+              {/* Wax Seal Button to Enter */}
+              <div className="pt-6 pb-2">
+                <button
+                  onClick={handleOpenInvitation}
+                  className="group relative inline-flex flex-col items-center justify-center transition-transform hover:scale-105 active:scale-95 focus:outline-none"
+                >
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-rose-700 via-rose-600 to-amber-600 shadow-xl flex items-center justify-center border-2 border-amber-200 text-white ring-4 ring-rose-200/50">
+                    <Heart className="w-8 h-8 fill-white/90 animate-pulse text-white" />
+                  </div>
+                  <span className="mt-3 text-xs font-sans tracking-[0.25em] text-rose-700 uppercase font-semibold group-hover:text-rose-800">
+                    Click to Open Card ❦
+                  </span>
+                </button>
+              </div>
+
+              <p className="text-[11px] font-sans text-stone-400">
+                Tap to unveil celebrations &amp; festive melodies
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* FLOATING ACTION BUTTONS */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
         <button
@@ -318,15 +467,26 @@ export default function WeddingInvite() {
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden">
         {/* BACKGROUND IMAGE & OVERLAYS */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src={heroImageSrc} 
             alt="Bhavna & Devansh" 
-            className="w-full h-full object-cover object-center filter brightness-[0.92]"
+            className="w-full h-full object-cover object-center filter brightness-[0.88] scale-105 transition-transform duration-1000"
             onError={handleImageFallback}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#faf8f5]/70 via-[#faf8f5]/50 to-[#faf8f5]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,242,242,0.5)_0%,transparent_75%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f2]/80 via-[#faf7f2]/55 to-[#faf7f2]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,241,242,0.6)_0%,transparent_80%)] pointer-events-none" />
+
+          {/* Royal Heritage Watermarks in Hero */}
+          <div className="absolute bottom-6 left-6 opacity-20 text-amber-800 pointer-events-none hidden md:block">
+            <RoyalElephant className="w-28 h-28" />
+          </div>
+          <div className="absolute bottom-6 right-6 opacity-20 text-amber-800 pointer-events-none hidden md:block">
+            <RoyalCamel className="w-28 h-28" />
+          </div>
+          <div className="absolute top-1/2 left-8 -translate-y-1/2 opacity-15 text-amber-800 pointer-events-none hidden lg:block">
+            <RoyalHorse className="w-24 h-24" />
+          </div>
         </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
@@ -385,13 +545,18 @@ export default function WeddingInvite() {
       {/* COUNTDOWN TIMER */}
       <section id="countdown" className="py-20 bg-white border-y border-stone-100">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
+          <div className="flex items-center justify-center gap-4 mb-3">
+            <RoyalCamel className="w-7 h-7 text-amber-600/60" />
+            <RoyalElephant className="w-8 h-8 text-rose-500/70" />
+            <RoyalHorse className="w-7 h-7 text-amber-600/60" />
+          </div>
           <Sparkles className="mx-auto text-rose-400 mb-3" size={24} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Counting Down To Forever</h2>
           <p className="text-stone-500 text-sm font-sans mb-10">Every second brings us closer to celebrating with you</p>
           
           <div className="grid grid-cols-4 gap-2 md:gap-6 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label} className="bg-[#faf8f5] rounded-2xl p-4 md:p-6 border border-stone-200/60 shadow-sm">
+              <div key={label} className="bg-[#faf8f5] rounded-2xl p-4 md:p-6 border border-amber-200/50 shadow-sm relative overflow-hidden">
                 <span className="block text-3xl md:text-5xl font-light text-rose-500 font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
                 <span className="text-xs uppercase tracking-wider text-gray-400 block mt-1">{label}</span>
               </div>
@@ -480,8 +645,11 @@ export default function WeddingInvite() {
                           whileInView="visible" 
                           viewport={{ once: true, margin: "-50px" }} 
                           variants={fadeInUp}
-                          className="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden flex flex-col justify-between group"
+                          className="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden flex flex-col justify-between group hover:border-amber-300"
                         >
+                          <RoyalCorner position="top-left" />
+                          <RoyalCorner position="top-right" />
+                          
                           {/* TOP LOGO EMBLEM */}
                           <div className="flex flex-col items-center text-center">
                             <div className={`w-20 h-20 rounded-full p-2.5 flex items-center justify-center ring-4 ${evt.ringColor} shadow-inner mb-4 transition-transform duration-300 group-hover:scale-105`}>
