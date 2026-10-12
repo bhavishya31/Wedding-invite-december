@@ -374,7 +374,19 @@ export default function WeddingInvite() {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Bhavna & Devansh Wedding Celebrations")}&dates=20261203T043000Z/20261204T183000Z&details=${encodeURIComponent("Join us in celebrating the wedding festivities of Bhavna and Devansh at Aura Banquet Hall, Jaipur!")}&location=${encodeURIComponent("Aura Banquet Hall, Giriraj Nagar, Dholai, Jaipur, Rajasthan 302020")}`;
 
   return (
-    <div className="min-h-screen bg-[#faf7f2] text-[#333333] font-serif antialiased overflow-x-hidden relative selection:bg-rose-100 selection:text-rose-900">
+    <div 
+      className="min-h-screen bg-[#faf5ee] text-[#333333] font-serif antialiased overflow-x-hidden relative selection:bg-[#831828]/10 selection:text-[#831828]"
+      style={{
+        backgroundImage: `
+          radial-gradient(circle at top right, rgba(131, 24, 40, 0.04), transparent 40%),
+          radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.05), transparent 40%),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23831828' fill-opacity='0.035' fill-rule='evenodd'%3E%3Cpath d='M30 0L60 30L30 60L0 30z M30 6L54 30L30 54L6 30z'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Cpath d='M30 14 C30 22 22 30 14 30 C22 30 30 38 30 46 C30 38 38 30 46 30 C38 30 30 22 30 14 Z' fill-opacity='0.02'/%3E%3C/g%3E%3C/svg%3E")
+        `,
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Top Heritage Border Accent */}
+      <div className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#58111A] via-amber-500 to-[#58111A] z-40" />
       
       {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
       {!isInvitationOpened && (
@@ -543,7 +555,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* COUNTDOWN TIMER */}
-      <section id="countdown" className="py-20 bg-white border-y border-stone-100">
+      <section id="countdown" className="py-20 bg-white/70 backdrop-blur-sm border-y border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-4 mb-3">
             <RoyalCamel className="w-7 h-7 text-amber-600/60" />
@@ -580,7 +592,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE CELEBRATIONS TIMELINE */}
-      <section className="py-24 bg-[#fbf9f6] border-t border-stone-200/70">
+      <section className="py-24 bg-[#f6eee3]/80 backdrop-blur-sm border-t border-amber-200/70">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-sans tracking-[0.3em] text-[#831828] uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
@@ -699,7 +711,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE VENUE MAP */}
-      <section className="py-24 bg-white border-t border-stone-100">
+      <section className="py-24 bg-white/70 backdrop-blur-sm border-t border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-3xl mx-auto px-6 text-center">
           <MapPin className="mx-auto text-rose-400 mb-4" size={32} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-3">The Venue</h2>
@@ -734,7 +746,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* STAY & GUEST ASSISTANCE */}
-      <section className="py-16 bg-[#faf8f5] border-t border-stone-200/60">
+      <section className="py-16 bg-[#f7efe4]/85 backdrop-blur-sm border-t border-amber-200/60">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Need Help or Directions?</h3>
           <p className="text-stone-500 font-sans text-xs md:text-sm mb-6">
@@ -755,7 +767,7 @@ export default function WeddingInvite() {
 
       {/* RSVP FORM */}
       <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-stone-200 text-center">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-md border border-amber-200/80 text-center">
           <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
           <p className="text-sm text-gray-500 font-sans mb-8">Kindly RSVP by October 25, 2026 so we can prepare for your arrival</p>
