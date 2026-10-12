@@ -394,7 +394,7 @@ export default function WeddingInvite() {
             </div>
 
             <div className="relative z-10 space-y-4">
-              <span className="text-xs font-sans tracking-[0.35em] text-rose-600 uppercase font-bold block">
+              <span className="text-xs font-sans tracking-[0.35em] text-[#831828] uppercase font-bold block">
                 ॥ श्री गणेशाय नमः ॥
               </span>
 
@@ -405,7 +405,7 @@ export default function WeddingInvite() {
               </p>
 
               <h2 className="text-3xl md:text-5xl font-light text-stone-900 tracking-wide">
-                Bhavna <span className="text-rose-500 font-serif">&amp;</span> Devansh
+                Bhavna <span className="text-[#831828] font-serif">&amp;</span> Devansh
               </h2>
 
               <p className="text-xs md:text-sm text-stone-600 italic font-serif">
@@ -418,16 +418,16 @@ export default function WeddingInvite() {
                   onClick={handleOpenInvitation}
                   className="group relative inline-flex flex-col items-center justify-center transition-transform hover:scale-105 active:scale-95 focus:outline-none"
                 >
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-rose-700 via-rose-600 to-amber-600 shadow-xl flex items-center justify-center border-2 border-amber-200 text-white ring-4 ring-rose-200/50">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#58111A] via-[#831828] to-amber-600 shadow-2xl flex items-center justify-center border-2 border-amber-300 text-amber-100 ring-4 ring-amber-300/40">
                     <Heart className="w-8 h-8 fill-white/90 animate-pulse text-white" />
                   </div>
-                  <span className="mt-3 text-xs font-sans tracking-[0.25em] text-rose-700 uppercase font-semibold group-hover:text-rose-800">
-                    Click to Open Card ❦
+                  <span className="mt-3 text-xs font-sans tracking-[0.25em] text-[#831828] uppercase font-semibold group-hover:text-amber-700">
+                    Khamma Ghani • Open Invitation ❦
                   </span>
                 </button>
               </div>
 
-              <p className="text-[11px] font-sans text-stone-400">
+              <p className="text-[11px] font-sans text-stone-500">
                 Tap to unveil celebrations &amp; festive melodies
               </p>
             </div>
@@ -439,10 +439,10 @@ export default function WeddingInvite() {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
         <button
           onClick={handleShare}
-          className="flex items-center gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-4 py-2.5 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all text-xs font-sans tracking-wider uppercase"
+          className="flex items-center gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-4 py-2.5 rounded-full shadow-lg border border-amber-200 hover:bg-stone-50 transition-all text-xs font-sans tracking-wider uppercase"
           title="Share Invitation"
         >
-          <Share2 size={15} className="text-rose-500" />
+          <Share2 size={15} className="text-[#831828]" />
           <span>{copiedShare ? "Link Copied!" : "Share"}</span>
         </button>
 
@@ -452,7 +452,7 @@ export default function WeddingInvite() {
         >
           {isPlaying ? (
             <>
-              <Volume2 size={16} className="text-rose-400 animate-pulse" />
+              <Volume2 size={16} className="text-[#831828] animate-pulse" />
               <span>Mute Music</span>
             </>
           ) : (
@@ -490,19 +490,19 @@ export default function WeddingInvite() {
         </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
-          <span className="text-xs md:text-sm font-sans tracking-[0.35em] text-rose-500 uppercase block font-medium">
+          <span className="text-xs md:text-sm font-sans tracking-[0.35em] text-[#831828] uppercase block font-bold">
             ॥ श्री गणेशाय नमः ॥
           </span>
 
-          <div className="w-12 h-[1px] bg-rose-200 mx-auto" />
+          <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto" />
 
-          <span className="text-sm uppercase tracking-[0.3em] text-gray-500 block font-sans">
+          <span className="text-sm uppercase tracking-[0.3em] text-stone-600 block font-sans font-medium">
             Together With Their Families
           </span>
 
           <h1 className="text-5xl md:text-8xl font-light tracking-wide text-gray-800 leading-tight">
             BHAVNA 
-            <span className="text-rose-400 font-serif block md:inline my-2 md:my-0 md:mx-4 font-normal">&amp;</span> 
+            <span className="text-[#831828] font-serif block md:inline my-2 md:my-0 md:mx-4 font-normal">&amp;</span> 
             DEVANSH
           </h1>
 
@@ -514,7 +514,7 @@ export default function WeddingInvite() {
             <span className="inline-block border-y border-stone-300 py-2 px-6 text-xl md:text-2xl text-gray-700 tracking-wider font-light">
               3 – 4 December 2026
             </span>
-            <p className="text-sm font-sans tracking-widest text-stone-500 uppercase mt-2">Jaipur, Rajasthan</p>
+            <p className="text-sm font-sans tracking-widest text-amber-800 uppercase mt-2 font-semibold">Pink City • Jaipur, Rajasthan</p>
           </div>
 
           <div className="pt-4 flex flex-wrap justify-center gap-4 text-xs font-sans tracking-wider uppercase">
@@ -528,7 +528,7 @@ export default function WeddingInvite() {
             </a>
             <a 
               href="#rsvp" 
-              className="inline-flex items-center gap-2 bg-rose-500 text-white px-6 py-3 rounded-full hover:bg-rose-600 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#831828] text-white px-6 py-3 rounded-full hover:bg-[#6c1421] transition-colors shadow-sm border border-amber-300/40"
             >
               <Heart size={14} className="fill-white" /> RSVP Now
             </a>
@@ -557,7 +557,7 @@ export default function WeddingInvite() {
           <div className="grid grid-cols-4 gap-2 md:gap-6 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([label, value]) => (
               <div key={label} className="bg-[#faf8f5] rounded-2xl p-4 md:p-6 border border-amber-200/50 shadow-sm relative overflow-hidden">
-                <span className="block text-3xl md:text-5xl font-light text-rose-500 font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
+                <span className="block text-3xl md:text-5xl font-light text-[#831828] font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
                 <span className="text-xs uppercase tracking-wider text-gray-400 block mt-1">{label}</span>
               </div>
             ))}
@@ -568,7 +568,7 @@ export default function WeddingInvite() {
       {/* OUR STORY SECTION */}
       <section className="py-24 max-w-3xl mx-auto px-6 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="space-y-6">
-          <span className="text-xs font-sans tracking-[0.25em] text-rose-500 uppercase block font-semibold">Our Journey</span>
+          <span className="text-xs font-sans tracking-[0.25em] text-[#831828] uppercase block font-semibold">Our Journey</span>
           <h2 className="text-3xl md:text-4xl font-light text-gray-800">Two Souls, One Beautiful Beginning</h2>
           <div className="w-16 h-[1px] bg-rose-300 mx-auto"></div>
           <p className="text-stone-600 font-sans text-sm md:text-base leading-relaxed">
@@ -583,7 +583,7 @@ export default function WeddingInvite() {
       <section className="py-24 bg-[#fbf9f6] border-t border-stone-200/70">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-xs font-sans tracking-[0.3em] text-rose-500 uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
+            <span className="text-xs font-sans tracking-[0.3em] text-[#831828] uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
             <h2 className="text-3xl md:text-5xl font-light tracking-widest text-gray-800 uppercase">The Celebrations</h2>
             <div className="flex items-center justify-center gap-2 mt-4">
               <span className="h-[1px] w-12 bg-rose-300"></span>
@@ -606,7 +606,7 @@ export default function WeddingInvite() {
                   onClick={() => setActiveDayFilter(tab.key)}
                   className={`px-4 py-2 rounded-full text-xs font-sans tracking-wider uppercase transition-all duration-200 ${
                     activeDayFilter === tab.key
-                      ? 'bg-rose-500 text-white shadow-md shadow-rose-200'
+                      ? 'bg-[#831828] text-white shadow-md shadow-amber-900/20'
                       : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
                   }`}
                 >
@@ -623,7 +623,7 @@ export default function WeddingInvite() {
                 <div key={dIdx} className="space-y-8">
                   <div className="flex items-center gap-4">
                     <div className="h-[1px] bg-gradient-to-r from-transparent to-rose-200 flex-1"></div>
-                    <div className="text-center px-6 py-2 bg-white rounded-full border border-rose-100 shadow-sm">
+                    <div className="text-center px-6 py-2 bg-white rounded-full border border-amber-200 shadow-sm">
                       <span className="text-[11px] font-sans tracking-widest uppercase text-rose-600 font-semibold block">{day.dayLabel}</span>
                       <h3 className="text-lg md:text-xl font-light text-gray-800 tracking-wider">{day.date}</h3>
                     </div>
@@ -682,7 +682,7 @@ export default function WeddingInvite() {
                               href={eventCalUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-rose-600 hover:text-rose-700 bg-rose-50 hover:bg-rose-100 px-3 py-1.5 rounded-full transition-colors shrink-0"
+                              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-[#831828] hover:text-[#58111A] bg-amber-50 hover:bg-amber-100 px-3 py-1.5 rounded-full transition-colors shrink-0 border border-amber-200"
                             >
                               <CalendarPlus size={13} />
                               <span>Calendar</span>
@@ -761,11 +761,15 @@ export default function WeddingInvite() {
           <p className="text-sm text-gray-500 font-sans mb-8">Kindly RSVP by October 25, 2026 so we can prepare for your arrival</p>
 
           {submitted ? (
-            <div className="py-12 flex flex-col items-center">
-              <CheckCircle2 size={48} className="text-rose-500 mb-3" />
-              <p className="text-2xl text-rose-600 font-serif italic">Thank You!</p>
-              <p className="text-gray-600 text-sm font-sans mt-2 max-w-md">
-                Your response has been warmly noted. We cannot wait to celebrate our special days with you!
+            <div className="py-12 px-6 bg-[#4a0e17] text-amber-100 rounded-2xl border-2 border-amber-400/50 flex flex-col items-center shadow-lg relative overflow-hidden">
+              <RoyalCorner position="top-left" />
+              <RoyalCorner position="top-right" />
+              <RoyalCorner position="bottom-left" />
+              <RoyalCorner position="bottom-right" />
+              <CheckCircle2 size={46} className="text-amber-300 mb-3" />
+              <p className="text-2xl md:text-3xl text-amber-100 font-serif italic">Khamma Ghani &amp; Thank You!</p>
+              <p className="text-amber-200/90 text-sm font-sans mt-2 max-w-md text-center leading-relaxed">
+                Your response has been warmly noted. We eagerly look forward to welcoming you to the Pink City to celebrate with us!
               </p>
             </div>
           ) : (
@@ -802,7 +806,7 @@ export default function WeddingInvite() {
                     type="button"
                     className={`py-3 px-4 rounded-xl border text-center font-medium transition-all ${
                       formData.status === 'attending' 
-                        ? 'bg-rose-500 text-white border-rose-500 shadow-sm' 
+                        ? 'bg-[#831828] text-white border-[#831828] shadow-sm' 
                         : 'bg-stone-50 border-stone-200 text-gray-700 hover:bg-stone-100'
                     }`}
                     onClick={() => setFormData({ ...formData, status: 'attending' })}
@@ -866,7 +870,7 @@ export default function WeddingInvite() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg disabled:opacity-50"
+                className="w-full bg-[#831828] hover:bg-[#6c1421] text-amber-50 font-medium py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg disabled:opacity-50 border border-amber-400/30"
               >
                 {isSubmitting ? "Sending..." : "Send RSVP"}
               </button>
@@ -875,11 +879,37 @@ export default function WeddingInvite() {
         </motion.div>
       </section>
 
+      {/* CLOSING / THANK YOU & BLESSINGS SECTION (ROYAL JAIPUR MAROON THEME) */}
+      <section className="py-20 bg-[#4a0e17] text-amber-100 text-center relative overflow-hidden border-t-4 border-amber-400/60">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.18)_0%,transparent_70%)] pointer-events-none" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 space-y-4">
+          <div className="flex items-center justify-center gap-4 text-amber-300/80 mb-2">
+            <RoyalCamel className="w-8 h-8" />
+            <RoyalElephant className="w-9 h-9" />
+            <RoyalHorse className="w-8 h-8" />
+          </div>
+          <span className="text-xs font-sans tracking-[0.35em] text-amber-300 uppercase font-semibold block">
+            पधारो म्हारे देश • Padharo Mhare Desh
+          </span>
+          <h2 className="text-3xl md:text-5xl font-light font-serif text-amber-50 tracking-wider">
+            Thank You for Blessing Us
+          </h2>
+          <p className="text-sm md:text-base text-amber-200/90 font-serif italic max-w-lg mx-auto leading-relaxed">
+            Your love, presence, and blessings make our holy union in Jaipur truly timeless and memorable.
+          </p>
+          <div className="pt-2 flex items-center justify-center gap-3">
+            <span className="h-[1px] w-12 bg-amber-400/40" />
+            <Heart size={16} className="fill-amber-400 text-amber-400" />
+            <span className="h-[1px] w-12 bg-amber-400/40" />
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
-      <footer className="py-12 bg-white border-t border-stone-100 text-center text-xs text-gray-400 font-sans tracking-widest uppercase">
+      <footer className="py-8 bg-[#36080e] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase border-t border-amber-400/20">
         <p className="mb-2">MADE WITH ❤️ FOR BHAVNA &amp; DEVANSH</p>
-        <p className="text-[10px] text-gray-400 tracking-normal font-serif italic normal-case">
-          3 – 4 December 2026 • Aura Banquet Hall, Jaipur
+        <p className="text-[11px] text-amber-300/70 tracking-normal font-serif italic normal-case">
+          3 – 4 December 2026 • Aura Banquet Hall, Jaipur, Rajasthan
         </p>
       </footer>
     </div>
