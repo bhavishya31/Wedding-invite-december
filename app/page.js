@@ -127,6 +127,24 @@ const SangeetIcon = () => (
   </svg>
 );
 
+/* CARNIVAL DANCE CELEBRATION ICON */
+const CarnivalIcon = () => (
+  <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
+    <circle cx="32" cy="32" r="24" stroke="#F59E0B" strokeWidth="1.5" strokeDasharray="3 3" />
+    <path d="M18 46 L46 18" stroke="#DC2626" strokeWidth="3" strokeLinecap="round" />
+    <path d="M46 46 L18 18" stroke="#D97706" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="18" cy="18" r="3" fill="#F59E0B" />
+    <circle cx="46" cy="18" r="3" fill="#DC2626" />
+    <circle cx="18" cy="46" r="3" fill="#DC2626" />
+    <circle cx="46" cy="46" r="3" fill="#F59E0B" />
+    <circle cx="32" cy="32" r="5" fill="#EF4444" stroke="#FEF3C7" strokeWidth="1.5" />
+    <circle cx="32" cy="14" r="2" fill="#F59E0B" />
+    <circle cx="32" cy="50" r="2" fill="#F59E0B" />
+    <circle cx="14" cy="32" r="2" fill="#DC2626" />
+    <circle cx="50" cy="32" r="2" fill="#DC2626" />
+  </svg>
+);
+
 /* BARAAT & DHOL PROCESSION ICON */
 const BaraatIcon = () => (
   <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
