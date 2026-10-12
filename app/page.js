@@ -179,8 +179,26 @@ const WeddingMuhurthamIcon = () => (
 );
 
 const CELEBRATIONS = [
-  {
+     {
     date: "November 26, 2026",
+    dayLabel: "Invitation",
+    dayKey: "invitation",
+    events: [
+      {
+        id: "ganesh-puja",
+        time: "7:00 AM",
+        title: "Ganesh Puja & Mandap Mahurat",
+        tagline: "Auspicious Beginnings",
+        attire: "Traditional Yellow / Pavitra Ethnic",
+        desc: "Seeking the divine blessings of Lord Ganesha to mark the auspicious beginning of our wedding festivities.",
+        logo: <GaneshPujaIcon />,
+        badgeColor: "bg-amber-500/10 text-amber-800 border-amber-300",
+        ringColor: "ring-amber-200/80 bg-amber-50/70",
+        calDates: "20261203T043000Z/20261203T073000Z"
+      }    
+] },
+  {
+    date: "December 3, 2026",
     dayLabel: "Day 01",
     dayKey: "day1",
     events: [
@@ -640,6 +658,7 @@ export default function WeddingInvite() {
             <div className="flex justify-center items-center gap-2 mt-8">
               {[
                 { key: 'all', label: 'All Celebrations' },
+                { key: 'invitation', label: 'Invitation' },
                 { key: 'day1', label: 'Day 01 • Dec 3' },
                 { key: 'day2', label: 'Day 02 • Dec 4' },
               ].map((tab) => (
