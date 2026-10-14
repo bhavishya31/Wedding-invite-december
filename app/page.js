@@ -581,8 +581,8 @@ export default function WeddingInvite() {
       
       {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
       {!isInvitationOpened && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/80 backdrop-blur-md transition-all duration-700">
-          <div className="relative w-full max-w-lg bg-[#fffdf9] rounded-3xl p-8 md:p-12 text-center border-4 border-amber-300/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-stone-900/80 backdrop-blur-md transition-all duration-700">
+          <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-[#fffdf9] rounded-3xl p-6 sm:p-8 md:p-12 text-center border-4 border-amber-300/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]">
             <RoyalCorner position="top-left" />
             <RoyalCorner position="top-right" />
             <RoyalCorner position="bottom-left" />
@@ -615,7 +615,7 @@ export default function WeddingInvite() {
                 Royal Wedding Invitation
               </p>
 
-              <h2 className="text-3xl md:text-5xl font-light text-stone-900 tracking-wide">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-stone-900 tracking-wide">
                 Bhavna <span className="text-[#831828] font-serif">&amp;</span> Devansh
               </h2>
 
@@ -647,10 +647,10 @@ export default function WeddingInvite() {
       )}
 
       {/* FLOATING ACTION BUTTONS */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2 sm:gap-3">
         <button
           onClick={handleShare}
-          className="flex items-center gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-4 py-2.5 rounded-full shadow-lg border border-amber-200 hover:bg-stone-50 transition-all text-xs font-sans tracking-wider uppercase"
+          className="flex items-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg border border-amber-200 hover:bg-stone-50 transition-all text-[11px] sm:text-xs font-sans tracking-wider uppercase"
           title="Share Invitation"
         >
           <Share2 size={15} className="text-[#831828]" />
@@ -659,7 +659,7 @@ export default function WeddingInvite() {
 
         <button 
           onClick={toggleMusic}
-          className="flex items-center gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-4 py-2.5 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all text-xs font-sans tracking-wider uppercase"
+          className="flex items-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg border border-stone-200 hover:bg-stone-50 transition-all text-[11px] sm:text-xs font-sans tracking-wider uppercase"
         >
           {isPlaying ? (
             <>
@@ -722,13 +722,13 @@ export default function WeddingInvite() {
               <span className="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent via-amber-400 to-amber-500" />
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif font-light tracking-[0.12em] md:tracking-[0.16em] uppercase leading-tight select-none drop-shadow-sm">
+            <h1 className="text-3xl sm:text-6xl md:text-8xl font-serif font-light tracking-[0.08em] sm:tracking-[0.12em] md:tracking-[0.16em] uppercase leading-tight select-none drop-shadow-sm flex flex-wrap items-center justify-center">
               <span className="bg-gradient-to-b from-[#6b1420] via-[#831828] to-[#991b1b] bg-clip-text text-transparent font-medium drop-shadow-[0_2px_12px_rgba(255,255,255,0.7)]">
                 Bhavna
               </span>
-              <span className="relative inline-flex items-center justify-center mx-3 md:mx-6 my-2 md:my-0 align-middle">
-                <span className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-amber-300/80 bg-gradient-to-tr from-[#FFFBEB] via-white to-[#FEF3C7] shadow-md flex items-center justify-center ring-2 ring-amber-400/30">
-                  <span className="text-[#831828] font-serif italic text-2xl md:text-3xl font-normal leading-none -mt-1">&amp;</span>
+              <span className="relative inline-flex items-center justify-center mx-2 sm:mx-4 md:mx-6 my-1 sm:my-0 align-middle">
+                <span className="w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-full border border-amber-300/80 bg-gradient-to-tr from-[#FFFBEB] via-white to-[#FEF3C7] shadow-md flex items-center justify-center ring-2 ring-amber-400/30">
+                  <span className="text-[#831828] font-serif italic text-lg sm:text-2xl md:text-3xl font-normal leading-none -mt-0.5">&amp;</span>
                 </span>
               </span>
               <span className="bg-gradient-to-b from-[#6b1420] via-[#831828] to-[#991b1b] bg-clip-text text-transparent font-medium drop-shadow-[0_2px_12px_rgba(255,255,255,0.7)]">
@@ -777,7 +777,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* COUNTDOWN TIMER */}
-      <section id="countdown" className="py-20 bg-white/70 backdrop-blur-sm border-y border-amber-200/60">
+      <section id="countdown" className="py-14 sm:py-20 bg-white/70 backdrop-blur-sm border-y border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 md:gap-5 mb-3">
             <BandBaajaSticker className="w-9 h-9 md:w-11 md:h-11 -rotate-12" />
@@ -790,11 +790,11 @@ export default function WeddingInvite() {
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Counting Down To Forever</h2>
           <p className="text-stone-500 text-sm font-sans mb-10">Every second brings us closer to celebrating with you</p>
           
-          <div className="grid grid-cols-4 gap-2 md:gap-6 max-w-lg mx-auto">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label} className="bg-[#faf8f5] rounded-2xl p-4 md:p-6 border border-amber-200/50 shadow-sm relative overflow-hidden">
-                <span className="block text-3xl md:text-5xl font-light text-[#831828] font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
-                <span className="text-xs uppercase tracking-wider text-gray-400 block mt-1">{label}</span>
+              <div key={label} className="bg-[#faf8f5] rounded-2xl p-2.5 sm:p-4 md:p-6 border border-amber-200/50 shadow-sm relative overflow-hidden">
+                <span className="block text-2xl sm:text-3xl md:text-5xl font-light text-[#831828] font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-400 block mt-1">{label}</span>
               </div>
             ))}
           </div>
@@ -838,7 +838,7 @@ export default function WeddingInvite() {
             </p>
 
             {/* DAY SELECTOR TABS */}
-            <div className="flex justify-center items-center gap-2 mt-8">
+            <div className="flex flex-wrap justify-center items-center gap-2 mt-8 px-2">
               {[
                 { key: 'all', label: 'All Celebrations' },
                 { key: 'invitation', label: 'Invitation' },
@@ -849,7 +849,7 @@ export default function WeddingInvite() {
                 <button
                   key={tab.key}
                   onClick={() => setActiveDayFilter(tab.key)}
-                  className={`px-4 py-2 rounded-full text-xs font-sans tracking-wider uppercase transition-all duration-200 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-sans tracking-wider uppercase transition-all duration-200 ${
                     activeDayFilter === tab.key
                       ? 'bg-[#831828] text-white shadow-md shadow-amber-900/20'
                       : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
@@ -890,7 +890,7 @@ export default function WeddingInvite() {
                           whileInView="visible" 
                           viewport={{ once: true, margin: "-50px" }} 
                           variants={fadeInUp}
-                          className="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden flex flex-col justify-between group hover:border-amber-300"
+                          className="bg-white rounded-3xl p-5 sm:p-7 md:p-8 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden flex flex-col justify-between group hover:border-amber-300"
                         >
                           <RoyalCorner position="top-left" />
                           <RoyalCorner position="top-right" />
@@ -1019,10 +1019,10 @@ export default function WeddingInvite() {
 
       {/* RSVP FORM */}
       <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white/90 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-md border border-amber-200/80 text-center">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 shadow-md border border-amber-200/80 text-center">
           <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
-          <p className="text-sm text-gray-500 font-sans mb-8">Kindly RSVP by October 25, 2026 so we can prepare for your arrival</p>
+          <p className="text-sm text-gray-500 font-sans mb-8">Kindly RSVP so we can prepare for your arrival</p>
 
           {submitted ? (
             <div className="py-12 px-6 bg-[#4a0e17] text-amber-100 rounded-2xl border-2 border-amber-400/50 flex flex-col items-center shadow-lg relative overflow-hidden">
