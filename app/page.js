@@ -722,11 +722,31 @@ export default function WeddingInvite() {
             Together With Their Families
           </span>
 
-          <h1 className="text-5xl md:text-8xl font-light tracking-wide text-gray-800 leading-tight">
-            BHAVNA 
-            <span className="text-[#831828] font-serif block md:inline my-2 md:my-0 md:mx-4 font-normal">&amp;</span> 
-            DEVANSH
-          </h1>
+          <div className="relative py-3">
+            {/* Ornate top flourish */}
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="h-[1px] w-12 md:w-20 bg-gradient-to-r from-transparent via-amber-400 to-amber-500" />
+              <span className="text-amber-600 text-xs md:text-sm">✦ ❦ ✦</span>
+              <span className="h-[1px] w-12 md:w-20 bg-gradient-to-l from-transparent via-amber-400 to-amber-500" />
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-serif font-light tracking-[0.12em] md:tracking-[0.16em] uppercase leading-tight select-none drop-shadow-sm">
+              <span className="bg-gradient-to-b from-[#6b1420] via-[#831828] to-[#991b1b] bg-clip-text text-transparent font-medium drop-shadow-[0_2px_12px_rgba(255,255,255,0.7)]">
+                Bhavna
+              </span>
+              <span className="relative inline-flex items-center justify-center mx-3 md:mx-6 my-2 md:my-0 align-middle">
+                <span className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-amber-300/80 bg-gradient-to-tr from-[#FFFBEB] via-white to-[#FEF3C7] shadow-md flex items-center justify-center ring-2 ring-amber-400/30">
+                  <span className="text-[#831828] font-serif italic text-2xl md:text-3xl font-normal leading-none -mt-1">&amp;</span>
+                </span>
+              </span>
+              <span className="bg-gradient-to-b from-[#6b1420] via-[#831828] to-[#991b1b] bg-clip-text text-transparent font-medium drop-shadow-[0_2px_12px_rgba(255,255,255,0.7)]">
+                Devansh
+              </span>
+            </h1>
+
+            {/* Ornate bottom underline */}
+            <div className="w-32 md:w-48 h-[1.5px] bg-gradient-to-r from-transparent via-amber-500/80 to-transparent mx-auto mt-4" />
+          </div>
 
           <p className="text-base md:text-xl text-gray-600 font-light italic max-w-xl mx-auto">
             Invite you to celebrate their union, love, and beginnings of forever
