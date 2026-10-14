@@ -187,7 +187,7 @@ const CELEBRATIONS = [
       {
         id: "ganesh-puja",
         time: "7:00 AM",
-        title: "Ganesh Puja & Mandap Mahurat",
+        title: "Ganesh Nimantran",
         tagline: "Auspicious Beginnings",
         attire: "Traditional Yellow / Pavitra Ethnic",
         desc: "Seeking the divine blessings of Lord Ganesha to mark the auspicious beginning of our wedding festivities.",
@@ -197,8 +197,8 @@ const CELEBRATIONS = [
         calDates: "20261203T043000Z/20261203T073000Z"
       }    
 ] },
-  {
-    date: "December 3, 2026",
+     {
+    date: "December 2, 2026",
     dayLabel: "Day 01",
     dayKey: "day1",
     events: [
@@ -214,6 +214,24 @@ const CELEBRATIONS = [
         ringColor: "ring-emerald-200/80 bg-emerald-50/70",
         calDates: "20261203T080000Z/20261203T103000Z"
       },
+      {
+        id: "chaak",
+        time: "11:00 AM",
+        title: "Chaak Ceremony",
+        tagline: "Henna, Folk & Celebrations",
+        attire: "Floral Vibes & Shades of Green",
+        desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
+        logo: <MehendiIcon />,
+        badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
+        ringColor: "ring-emerald-200/80 bg-emerald-50/70",
+        calDates: "20261203T080000Z/20261203T103000Z"
+      },         
+] },
+  {
+    date: "December 3, 2026",
+    dayLabel: "Day 02",
+    dayKey: "day2",
+    events: [
       {
         id: "haldi",
         time: "11:00 AM",
@@ -242,8 +260,8 @@ const CELEBRATIONS = [
   },
   {
     date: "December 4, 2026",
-    dayLabel: "Day 02",
-    dayKey: "day2",
+    dayLabel: "Day 03",
+    dayKey: "day3",
     events: [
       {
         id: "carnival",
@@ -647,8 +665,9 @@ export default function WeddingInvite() {
               {[
                 { key: 'all', label: 'All Celebrations' },
                 { key: 'invitation', label: 'Invitation' },
-                { key: 'day1', label: 'Day 01 • Dec 3' },
-                { key: 'day2', label: 'Day 02 • Dec 4' },
+                { key: 'day1', label: 'Day 01 • Dec 2' },
+                { key: 'day2', label: 'Day 02 • Dec 3' },
+                { key: 'day2', label: 'Day 03 • Dec 4' },
               ].map((tab) => (
                 <button
                   key={tab.key}
