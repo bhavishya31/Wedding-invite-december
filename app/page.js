@@ -131,7 +131,7 @@ const BandBaajaSticker = ({ className = "w-16 h-16", showLabel = false }) => (
   </div>
 );
 
-/* WEDDING FLORAL GARLAND & FLOWER CORNERS (GENDA, ROSES & JASMINE STRINGS) */
+/* WEDDING FLORAL GARLAND & FLOWER CORNERS (BACKGROUND THEME) */
 const CornerGarland = ({ position = "top-left" }) => {
   const posClass = {
     "top-left": "top-0 left-0",
@@ -141,7 +141,7 @@ const CornerGarland = ({ position = "top-left" }) => {
   }[position];
 
   return (
-    <div className={`fixed ${posClass} pointer-events-none z-40 w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 drop-shadow-md select-none`}>
+    <div className={`absolute ${posClass} pointer-events-none w-32 h-32 sm:w-48 sm:h-48 md:w-56 md:h-56 select-none opacity-85`}>
       <svg viewBox="0 0 160 160" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         {/* Background Mango / Paan Leaf Cluster */}
         <path d="M10 2 C18 18 16 38 4 52 C22 46 36 34 38 18 Z" fill="#15803D" opacity="0.85" />
@@ -633,35 +633,22 @@ export default function WeddingInvite() {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* CEREMONIAL ARCHED GATE FRAME WITH MULTI-LAYERED LINES */}
-      <div className="fixed inset-2 sm:inset-3 pointer-events-none z-30">
-        {/* Outer Gate Frame Line */}
-        <div className="absolute inset-0 border-2 border-amber-600/35 rounded-2xl" />
-        {/* Inner Gate Frame Line */}
-        <div className="absolute inset-1.5 sm:inset-2 border border-amber-500/25 rounded-xl" />
-        
-        {/* Gate Toran Arch Header Emblem */}
-        <div className="absolute -top-1 left-1/2 -translate-x-1/2 flex items-center justify-center">
-          <div className="h-[2px] w-12 sm:w-28 bg-gradient-to-r from-transparent via-amber-500/60 to-amber-600" />
-          <div className="px-3 py-0.5 bg-[#FAF6EE] border border-amber-500/50 rounded-full shadow-xs text-amber-800 text-[10px] tracking-widest uppercase font-serif">
-            ✦ शुभ विवाह ✦
-          </div>
-          <div className="h-[2px] w-12 sm:w-28 bg-gradient-to-l from-transparent via-amber-500/60 to-amber-600" />
-        </div>
-        
-        {/* Gate Bottom Arch Accent */}
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 flex items-center justify-center">
-          <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
-          <span className="w-1.5 h-1.5 rotate-45 bg-amber-600/60 mx-2" />
-          <div className="h-[2px] w-16 sm:w-24 bg-gradient-to-l from-transparent via-amber-500/50 to-transparent" />
-        </div>
-      </div>
+      {/* WEBSITE THEME: CEREMONIAL GATE FRAME WITH LINES & CORNER GARLANDS (BACKGROUND ONLY) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
+        {/* Gate Frame Structural Lines in Background */}
+        <div className="absolute inset-2 sm:inset-4 md:inset-6 border border-amber-600/25 rounded-3xl" />
+        <div className="absolute inset-3.5 sm:inset-6 md:inset-8 border border-amber-500/20 rounded-2xl" />
 
-      {/* CORNER FLORAL GARLANDS ON ALL FOUR CORNERS */}
-      <CornerGarland position="top-left" />
-      <CornerGarland position="top-right" />
-      <CornerGarland position="bottom-left" />
-      <CornerGarland position="bottom-right" />
+        {/* Subtle Toran Gate Line Accents */}
+        <div className="absolute top-2 sm:top-4 md:top-6 left-16 right-16 sm:left-28 sm:right-28 h-[1px] bg-gradient-to-r from-transparent via-amber-600/30 to-transparent" />
+        <div className="absolute bottom-2 sm:bottom-4 md:bottom-6 left-16 right-16 sm:left-28 sm:right-28 h-[1px] bg-gradient-to-r from-transparent via-amber-600/30 to-transparent" />
+
+        {/* Floral Garlands & Flowers on the 4 Corners (Background Theme Only) */}
+        <CornerGarland position="top-left" />
+        <CornerGarland position="top-right" />
+        <CornerGarland position="bottom-left" />
+        <CornerGarland position="bottom-right" />
+      </div>
       
       {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
       {!isInvitationOpened && (
@@ -760,7 +747,7 @@ export default function WeddingInvite() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden z-10">
         {/* BACKGROUND IMAGE & OVERLAYS */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
@@ -861,7 +848,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* COUNTDOWN TIMER */}
-      <section id="countdown" className="py-14 sm:py-20 bg-[#FDFBF7]/85 backdrop-blur-sm border-y border-amber-200/60">
+      <section id="countdown" className="py-14 sm:py-20 bg-[#FDFBF7]/85 backdrop-blur-sm border-y border-amber-200/60 relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 md:gap-5 mb-3">
             <BandBaajaSticker className="w-9 h-9 md:w-11 md:h-11 -rotate-12" />
@@ -886,7 +873,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* OUR STORY SECTION */}
-      <section className="py-24 max-w-3xl mx-auto px-6 text-center">
+      <section className="py-24 max-w-3xl mx-auto px-6 text-center relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="space-y-6">
           <div className="flex justify-center mb-2">
             <BrideGroomLogo className="w-24 h-24 md:w-28 md:h-28 mx-auto drop-shadow-sm hover:scale-105 transition-transform" />
@@ -903,7 +890,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE CELEBRATIONS TIMELINE */}
-      <section className="py-24 bg-[#F5EEDB]/75 backdrop-blur-sm border-t border-amber-200/70">
+      <section className="py-24 bg-[#F5EEDB]/75 backdrop-blur-sm border-t border-amber-200/70 relative z-10">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-sans tracking-[0.3em] text-[#831828] uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
@@ -1028,7 +1015,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE VENUE MAP */}
-      <section className="py-24 bg-[#FDFBF7]/80 backdrop-blur-sm border-t border-amber-200/60">
+      <section className="py-24 bg-[#FDFBF7]/80 backdrop-blur-sm border-t border-amber-200/60 relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-3xl mx-auto px-6 text-center">
           <MapPin className="mx-auto text-rose-400 mb-4" size={32} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-3">The Venue</h2>
@@ -1082,7 +1069,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* STAY & GUEST ASSISTANCE */}
-      <section className="py-16 bg-[#F5ECDC]/85 backdrop-blur-sm border-t border-amber-200/60">
+      <section className="py-16 bg-[#F5ECDC]/85 backdrop-blur-sm border-t border-amber-200/60 relative z-10">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Need Help or Directions?</h3>
           <p className="text-stone-500 font-sans text-xs md:text-sm mb-6">
@@ -1102,7 +1089,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* RSVP FORM */}
-      <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6">
+      <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6 relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-[#FFFDF9]/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 shadow-md border border-amber-200/80 text-center">
           <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
@@ -1228,7 +1215,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* CLOSING / THANK YOU & BLESSINGS SECTION (ROYAL JAIPUR MAROON THEME) */}
-      <section className="py-20 bg-[#4a0e17] text-amber-100 text-center relative overflow-hidden border-t-4 border-amber-400/60">
+      <section className="py-20 bg-[#4a0e17] text-amber-100 text-center relative overflow-hidden border-t-4 border-amber-400/60 z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.18)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 space-y-4">
           <div className="flex items-center justify-center gap-3 md:gap-4 text-amber-300/80 mb-2">
@@ -1258,7 +1245,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-8 bg-[#36080e] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase border-t border-amber-400/20">
+      <footer className="py-8 bg-[#36080e] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase border-t border-amber-400/20 relative z-10">
         <p className="mb-2">MADE WITH ❤️ FOR BHAVNA &amp; DEVANSH</p>
         <p className="text-[11px] text-amber-300/70 tracking-normal font-serif italic normal-case">
           3 – 4 December 2026 • Aura Banquet Hall, Jaipur, Rajasthan
