@@ -698,14 +698,6 @@ export default function WeddingInvite() {
           <div className="absolute top-1/2 left-8 -translate-y-1/2 opacity-15 text-amber-800 pointer-events-none hidden lg:block">
             <RoyalHorse className="w-24 h-24" />
           </div>
-
-          {/* Band Baaja Festive Stickers in Hero */}
-          <div className="absolute top-28 right-4 md:right-16 z-20 rotate-12 hidden sm:block hover:rotate-0 transition-transform">
-            <BandBaajaSticker className="w-20 h-20 md:w-24 md:h-24" showLabel={true} />
-          </div>
-          <div className="absolute bottom-24 left-4 md:left-14 z-20 -rotate-12 hidden sm:block hover:rotate-0 transition-transform">
-            <BandBaajaSticker className="w-16 h-16 md:w-20 md:h-20" showLabel={false} />
-          </div>
         </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
