@@ -22,6 +22,65 @@ import { motion } from 'framer-motion';
 const MEHENDI_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
 const HALDI_ANGLES = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
 
+/* AUSPICIOUS LORD GANESHA LOGO */
+const LordGaneshaLogo = ({ className = "w-14 h-14" }) => (
+  <svg viewBox="0 0 80 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="40" cy="40" r="38" stroke="#D97706" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+    <circle cx="40" cy="40" r="35" stroke="#F59E0B" strokeWidth="0.8" opacity="0.4" />
+    {/* Auspicious Mukut / Crown */}
+    <path d="M34 18 L40 8 L46 18 L43 23 L37 23 Z" fill="#F59E0B" stroke="#B45309" strokeWidth="1" />
+    <circle cx="40" cy="14" r="2" fill="#DC2626" />
+    {/* Divine Mastak & Tilak */}
+    <path d="M28 24 C33 21 47 21 52 24 C55 31 52 35 48 37 C45 35 35 35 32 37 C28 35 25 31 28 24 Z" fill="#FEF3C7" stroke="#B45309" strokeWidth="1.2" />
+    <path d="M40 21 L40 31" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" />
+    <path d="M36 24 Q40 28 44 24" stroke="#DC2626" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <circle cx="40" cy="30" r="1.5" fill="#F59E0B" />
+    {/* Ears */}
+    <path d="M28 25 C20 23 15 32 20 40 C24 43 27 40 28 36" fill="#FDE68A" stroke="#B45309" strokeWidth="1.2" />
+    <path d="M52 25 C60 23 65 32 60 40 C56 43 53 40 52 36" fill="#FDE68A" stroke="#B45309" strokeWidth="1.2" />
+    {/* Trunk / Vakra-tunda */}
+    <path d="M37 36 C37 44 38 52 44 54 C48 55 51 52 50 49 C49 46 45 47 44 49" stroke="#B45309" strokeWidth="3" strokeLinecap="round" fill="none" />
+    {/* Single Tusk */}
+    <path d="M34 38 L30 40 L34 41 Z" fill="#FFFFFF" stroke="#B45309" strokeWidth="0.8" />
+    {/* Modak */}
+    <ellipse cx="52" cy="48" rx="4" ry="4" fill="#F59E0B" stroke="#B45309" strokeWidth="0.8" />
+  </svg>
+);
+
+/* ROYAL BRIDE & GROOM EMBLEM LOGO */
+const BrideGroomLogo = ({ className = "w-20 h-20" }) => (
+  <svg viewBox="0 0 100 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="40" r="38" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="1.2" strokeDasharray="3 3" />
+    {/* Groom (Left): Safa / Turban & Sherwani */}
+    <g transform="translate(17, 14)">
+      <path d="M12 18 C12 10 18 6 24 6 C30 6 34 11 32 18 Z" fill="#DC2626" stroke="#991B1B" strokeWidth="1" />
+      <path d="M14 14 C18 10 26 10 31 15" stroke="#F59E0B" strokeWidth="1.5" fill="none" />
+      <path d="M22 6 L22 1 L24 4 Z" fill="#F59E0B" />
+      <circle cx="22" cy="6" r="1.5" fill="#FEF08A" />
+      <path d="M12 16 C8 20 8 28 10 32" stroke="#DC2626" strokeWidth="1.8" fill="none" strokeLinecap="round" />
+      <circle cx="23" cy="22" r="5" fill="#FDE68A" />
+      <path d="M14 38 C14 29 18 28 23 28 C28 28 32 29 32 38 Z" fill="#78350F" stroke="#92400E" strokeWidth="1" />
+      <path d="M23 28 L23 38" stroke="#F59E0B" strokeWidth="1" />
+      <path d="M18 31 Q23 37 28 31" stroke="#FEF3C7" strokeWidth="1.5" strokeDasharray="1.5 1.5" fill="none" />
+    </g>
+    {/* Bride (Right): Chunri, Maang Tikka & Lehanga */}
+    <g transform="translate(47, 14)">
+      <path d="M10 38 C9 24 14 8 26 8 C38 8 43 24 42 38 Z" fill="#B91C1C" stroke="#991B1B" strokeWidth="1" />
+      <path d="M14 38 C14 20 18 12 26 12 C34 12 38 20 38 38" stroke="#F59E0B" strokeWidth="1.2" strokeDasharray="2 2" fill="none" />
+      <circle cx="26" cy="22" r="5" fill="#FDE68A" />
+      <path d="M26 14 L26 19" stroke="#F59E0B" strokeWidth="1" />
+      <circle cx="26" cy="19" r="1" fill="#DC2626" />
+      <path d="M18 38 C18 30 22 28 26 28 C30 28 34 30 34 38 Z" fill="#991B1B" />
+      <path d="M21 30 Q26 35 31 30" stroke="#FBBF24" strokeWidth="1.5" fill="none" />
+    </g>
+    {/* Auspicious Garland / Varmala */}
+    <path d="M37 46 Q50 56 63 46" stroke="#10B981" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+    <circle cx="43" cy="49" r="2" fill="#EF4444" />
+    <circle cx="50" cy="51" r="2.5" fill="#F59E0B" />
+    <circle cx="57" cy="49" r="2" fill="#EF4444" />
+  </svg>
+);
+
 /* ROYAL RAJASTHANI MOTIF ARTWORK (Elephant, Camel, Horse) */
 const RoyalElephant = ({ className = "w-12 h-12" }) => (
   <svg viewBox="0 0 100 80" className={className} fill="currentColor">
@@ -127,6 +186,26 @@ const SangeetIcon = () => (
   </svg>
 );
 
+/* CHAAK CEREMONY ICON (Sacred Decorated Matka & Kalash) */
+const ChaakIcon = () => (
+  <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
+    <ellipse cx="32" cy="52" rx="12" ry="3" fill="#D97706" opacity="0.3" />
+    <path d="M24 51 L40 51" stroke="#B45309" strokeWidth="2" strokeLinecap="round" />
+    <path d="M22 28 C16 33 16 46 24 50 C28 52 36 52 40 50 C48 46 48 33 42 28 Z" fill="#F59E0B" stroke="#B45309" strokeWidth="1.6" />
+    <path d="M25 28 C25 25 27 23 32 23 C37 23 39 25 39 28 Z" fill="#D97706" stroke="#92400E" strokeWidth="1.2" />
+    <ellipse cx="32" cy="23" rx="8" ry="2.5" fill="#FDE68A" stroke="#B45309" strokeWidth="1.5" />
+    <path d="M32 12 C28 16 28 22 32 23 C36 22 36 16 32 12 Z" fill="#78350F" stroke="#451A03" strokeWidth="1.2" />
+    <path d="M26 23 C20 20 20 16 22 13 C25 16 27 19 28 22 Z" fill="#10B981" stroke="#047857" strokeWidth="1" />
+    <path d="M38 23 C44 20 44 16 42 13 C39 16 37 19 36 22 Z" fill="#10B981" stroke="#047857" strokeWidth="1" />
+    <path d="M19 36 Q32 41 45 36" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M21 42 Q32 47 43 42" stroke="#DC2626" strokeWidth="1.5" strokeDasharray="2 2" />
+    <circle cx="32" cy="35" r="2.5" fill="#DC2626" />
+    <circle cx="26" cy="34" r="1.5" fill="#FEF3C7" />
+    <circle cx="38" cy="34" r="1.5" fill="#FEF3C7" />
+    <circle cx="32" cy="44" r="2" fill="#B45309" />
+  </svg>
+);
+
 /* CARNIVAL DANCE CELEBRATION ICON */
 const CarnivalIcon = () => (
   <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
@@ -209,7 +288,7 @@ const CELEBRATIONS = [
         tagline: "Henna, Folk & Celebrations",
         attire: "Floral Vibes & Shades of Green",
         desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
-        logo: <MehendiIcon />,
+        logo: <ChaakIcon />,
         badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
         ringColor: "ring-emerald-200/80 bg-emerald-50/70",
         calDates: "20261203T080000Z/20261203T103000Z"
@@ -432,9 +511,9 @@ export default function WeddingInvite() {
       className="min-h-screen bg-[#faf5ee] text-[#333333] font-serif antialiased overflow-x-hidden relative selection:bg-[#831828]/10 selection:text-[#831828]"
       style={{
         backgroundImage: `
-          radial-gradient(circle at top right, rgba(131, 24, 40, 0.04), transparent 40%),
-          radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.05), transparent 40%),
-          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23831828' fill-opacity='0.035' fill-rule='evenodd'%3E%3Cpath d='M30 0L60 30L30 60L0 30z M30 6L54 30L30 54L6 30z'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Cpath d='M30 14 C30 22 22 30 14 30 C22 30 30 38 30 46 C30 38 38 30 46 30 C38 30 30 22 30 14 Z' fill-opacity='0.02'/%3E%3C/g%3E%3C/svg%3E")
+          radial-gradient(circle at top right, rgba(131, 24, 40, 0.06), transparent 45%),
+          radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.07), transparent 45%),
+          url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23831828' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M40 0 C45 15 65 15 70 0 C80 20 60 40 40 40 C20 40 0 20 10 0 C15 15 35 15 40 0 Z'/%3E%3Cpath d='M40 80 C45 65 65 65 70 80 C80 60 60 40 40 40 C20 40 0 60 10 80 C15 65 35 65 40 80 Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='40' cy='40' r='8' stroke='%23D97706' stroke-opacity='0.05' fill='none'/%3E%3Ccircle cx='0' cy='40' r='3'/%3E%3Ccircle cx='80' cy='40' r='3'/%3E%3C/g%3E%3C/svg%3E")
         `,
         backgroundAttachment: 'fixed'
       }}
@@ -460,6 +539,9 @@ export default function WeddingInvite() {
             </div>
 
             <div className="relative z-10 space-y-4">
+              <div className="flex justify-center pt-2">
+                <LordGaneshaLogo className="w-14 h-14 mx-auto drop-shadow-sm" />
+              </div>
               <span className="text-xs font-sans tracking-[0.35em] text-[#831828] uppercase font-bold block">
                 ॥ श्री गणेशाय नमः ॥
               </span>
@@ -556,6 +638,9 @@ export default function WeddingInvite() {
         </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
+          <div className="flex justify-center">
+            <LordGaneshaLogo className="w-16 h-16 md:w-20 md:h-20 mx-auto drop-shadow-md hover:scale-105 transition-transform" />
+          </div>
           <span className="text-xs md:text-sm font-sans tracking-[0.35em] text-[#831828] uppercase block font-bold">
             ॥ श्री गणेशाय नमः ॥
           </span>
@@ -634,6 +719,9 @@ export default function WeddingInvite() {
       {/* OUR STORY SECTION */}
       <section className="py-24 max-w-3xl mx-auto px-6 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="space-y-6">
+          <div className="flex justify-center mb-2">
+            <BrideGroomLogo className="w-24 h-24 md:w-28 md:h-28 mx-auto drop-shadow-sm hover:scale-105 transition-transform" />
+          </div>
           <span className="text-xs font-sans tracking-[0.25em] text-[#831828] uppercase block font-semibold">Our Journey</span>
           <h2 className="text-3xl md:text-4xl font-light text-gray-800">Two Souls, One Beautiful Beginning</h2>
           <div className="w-16 h-[1px] bg-rose-300 mx-auto"></div>
@@ -667,7 +755,7 @@ export default function WeddingInvite() {
                 { key: 'invitation', label: 'Invitation' },
                 { key: 'day1', label: 'Day 01 • Dec 2' },
                 { key: 'day2', label: 'Day 02 • Dec 3' },
-                { key: 'day2', label: 'Day 03 • Dec 4' },
+                { key: 'day3', label: 'Day 03 • Dec 4' },
               ].map((tab) => (
                 <button
                   key={tab.key}
