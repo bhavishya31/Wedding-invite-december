@@ -464,7 +464,7 @@ export default function WeddingInvite() {
   const audioRef = useRef(null);
   const [activeDayFilter, setActiveDayFilter] = useState('all');
   const defaultFallbackImage = "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=2000&q=80";
-  const [heroImageSrc, setHeroImageSrc] = useState('/hero.jpg');
+  const [heroImageSrc, setHeroImageSrc] = useState('/IMG-20260925-WA0003~2.jpg');
 
   const handleImageFallback = () => {
     if (heroImageSrc !== defaultFallbackImage) {
@@ -994,7 +994,7 @@ export default function WeddingInvite() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs font-sans">
             <a 
-              href="https://wa.me/?text=Hello!%20I%20have%20a%20query%20regarding%20Bhavna%20and%20Devansh's%20wedding" 
+              href="https://wa.me/qr/Z63M2WXI7AGOG1" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-stone-300 bg-white px-5 py-2.5 rounded-full hover:bg-stone-50 transition-colors text-stone-700"
