@@ -187,23 +187,29 @@ const SangeetIcon = () => (
   </svg>
 );
 
-/* CHAAK CEREMONY ICON (Sacred Decorated Matka & Kalash) */
+/* CHAAK CEREMONY ICON (Traditional Decorated Terracotta Kalash & Matka) */
 const ChaakIcon = () => (
   <svg viewBox="0 0 64 64" className="w-12 h-12" fill="none">
-    <ellipse cx="32" cy="52" rx="12" ry="3" fill="#D97706" opacity="0.3" />
-    <path d="M24 51 L40 51" stroke="#B45309" strokeWidth="2" strokeLinecap="round" />
-    <path d="M22 28 C16 33 16 46 24 50 C28 52 36 52 40 50 C48 46 48 33 42 28 Z" fill="#F59E0B" stroke="#B45309" strokeWidth="1.6" />
-    <path d="M25 28 C25 25 27 23 32 23 C37 23 39 25 39 28 Z" fill="#D97706" stroke="#92400E" strokeWidth="1.2" />
+    <ellipse cx="32" cy="52" rx="12" ry="3" fill="#7C2D12" opacity="0.25" />
+    <path d="M24 51 L40 51" stroke="#9A3412" strokeWidth="2" strokeLinecap="round" />
+    {/* Terracotta Earthen Clay Body */}
+    <path d="M22 28 C16 33 16 46 24 50 C28 52 36 52 40 50 C48 46 48 33 42 28 Z" fill="#C2410C" stroke="#7C2D12" strokeWidth="1.6" />
+    {/* Pot Neck & Golden Rim */}
+    <path d="M25 28 C25 25 27 23 32 23 C37 23 39 25 39 28 Z" fill="#EA580C" stroke="#9A3412" strokeWidth="1.2" />
     <ellipse cx="32" cy="23" rx="8" ry="2.5" fill="#FDE68A" stroke="#B45309" strokeWidth="1.5" />
+    {/* Auspicious Coconut (Nariyal) */}
     <path d="M32 12 C28 16 28 22 32 23 C36 22 36 16 32 12 Z" fill="#78350F" stroke="#451A03" strokeWidth="1.2" />
-    <path d="M26 23 C20 20 20 16 22 13 C25 16 27 19 28 22 Z" fill="#10B981" stroke="#047857" strokeWidth="1" />
-    <path d="M38 23 C44 20 44 16 42 13 C39 16 37 19 36 22 Z" fill="#10B981" stroke="#047857" strokeWidth="1" />
-    <path d="M19 36 Q32 41 45 36" stroke="#DC2626" strokeWidth="1.8" strokeLinecap="round" />
-    <path d="M21 42 Q32 47 43 42" stroke="#DC2626" strokeWidth="1.5" strokeDasharray="2 2" />
-    <circle cx="32" cy="35" r="2.5" fill="#DC2626" />
-    <circle cx="26" cy="34" r="1.5" fill="#FEF3C7" />
-    <circle cx="38" cy="34" r="1.5" fill="#FEF3C7" />
-    <circle cx="32" cy="44" r="2" fill="#B45309" />
+    {/* Mango Leaves (Aam Patte) */}
+    <path d="M26 23 C20 20 20 16 22 13 C25 16 27 19 28 22 Z" fill="#059669" stroke="#047857" strokeWidth="1" />
+    <path d="M38 23 C44 20 44 16 42 13 C39 16 37 19 36 22 Z" fill="#059669" stroke="#047857" strokeWidth="1" />
+    {/* Festive Kumkum & Gold Bands */}
+    <path d="M19 36 Q32 41 45 36" stroke="#FEF08A" strokeWidth="2" strokeLinecap="round" />
+    <path d="M21 42 Q32 47 43 42" stroke="#FEF3C7" strokeWidth="1.5" strokeDasharray="2 2" />
+    {/* Auspicious Tilak Accents */}
+    <circle cx="32" cy="35" r="2.8" fill="#DC2626" />
+    <circle cx="26" cy="35" r="1.6" fill="#FDE047" />
+    <circle cx="38" cy="35" r="1.6" fill="#FDE047" />
+    <circle cx="32" cy="44" r="2.2" fill="#FEF08A" />
   </svg>
 );
 
@@ -289,7 +295,7 @@ const CELEBRATIONS = [
         tagline: "Henna, Folk & Celebrations",
         attire: "Floral Vibes & Shades of Green",
         desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
-        logo: <ChaakIcon />,
+        logo: <MehendiIcon />,
         badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
         ringColor: "ring-emerald-200/80 bg-emerald-50/70",
         calDates: "20261203T080000Z/20261203T103000Z"
@@ -301,9 +307,9 @@ const CELEBRATIONS = [
         tagline: "Rooted in rituals, wrapped in love.",
         attire: "Vibrant ethnic wear",
         desc: "A celebration of tradition, family, and new beginnings. Join us for the Chaak Ceremony as we seek blessings and commence the wedding festivities with joy and love.",
-        logo: <MehendiIcon />,
-        badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
-        ringColor: "ring-emerald-200/80 bg-emerald-50/70",
+        logo: <ChaakIcon />,
+        badgeColor: "bg-orange-500/10 text-orange-900 border-orange-300",
+        ringColor: "ring-orange-200/80 bg-orange-50/70",
         calDates: "20261203T080000Z/20261203T103000Z"
       },         
 ] },
@@ -902,18 +908,6 @@ export default function WeddingInvite() {
             <p className="text-[11px] text-stone-500 font-sans mt-3">
               Scan with your phone camera to open directly in Google Maps for live navigation.
             </p>
-          </div>
-
-          <div className="mt-8 rounded-2xl overflow-hidden border border-stone-200 aspect-video max-w-2xl mx-auto shadow-sm">
-            <iframe 
-              src="https://maps.google.com/maps?q=Aura+Banquet+Hall+Giriraj+Nagar+Dholai+Jaipur&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen
-              loading="lazy" 
-              title="Venue Location Map"
-            />
           </div>
         </motion.div>
       </section>
