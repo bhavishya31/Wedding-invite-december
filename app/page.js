@@ -1176,10 +1176,10 @@ export default function WeddingInvite() {
             <BandBaajaSticker className="w-10 h-10 md:w-12 md:h-12 rotate-12" />
           </div>
           <span className="text-xs font-sans tracking-[0.3em] text-amber-300 uppercase font-semibold block">
-            ॥ मङ्गलं भगवान् विष्णुः मङ्गलं गरुडध्वजः ॥ • Two Hearts • Seven Vows • Forever Bound
+            • Two Hearts • Seven Vows • Forever Bound
           </span>
           <h2 className="text-3xl md:text-5xl font-light font-serif text-amber-50 tracking-wider">
-            Thank You for Blessing Our Union
+            Thank You
           </h2>
           <p className="text-sm md:text-base text-amber-200/90 font-serif italic max-w-lg mx-auto leading-relaxed">
             &ldquo;In the circle of love, two lives intertwine and two souls become one.&rdquo;
@@ -1196,7 +1196,7 @@ export default function WeddingInvite() {
 
       {/* FOOTER */}
       <footer className="py-8 bg-[#36080e] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase border-t border-amber-400/20">
-        <p className="mb-2">MADE WITH ❤️ FOR BHAVNA &amp; DEVANSH</p>
+        <p className="mb-2">❤️ DEVKIBHAVNA ❤️</p>
         <p className="text-[11px] text-amber-300/70 tracking-normal font-serif italic normal-case">
           3 – 4 December 2026 • Aura Banquet Hall, Jaipur, Rajasthan
         </p>
