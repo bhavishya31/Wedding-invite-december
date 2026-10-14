@@ -15,7 +15,8 @@ import {
   CheckCircle2, 
   PhoneCall,
   CalendarPlus,
-  Shirt
+  Shirt,
+  QrCode
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -505,6 +506,8 @@ export default function WeddingInvite() {
   };
 
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Bhavna & Devansh Wedding Celebrations")}&dates=20261203T043000Z/20261204T183000Z&details=${encodeURIComponent("Join us in celebrating the wedding festivities of Bhavna and Devansh at Aura Banquet Hall, Jaipur!")}&location=${encodeURIComponent("Aura Banquet Hall, Giriraj Nagar, Dholai, Jaipur, Rajasthan 302020")}`;
+  const venueMapsUrl = "https://maps.google.com/?q=Aura+Banquet+Hall+Giriraj+Nagar+Dholai+Jaipur";
+  const venueQrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(venueMapsUrl)}`;
 
   return (
     <div 
@@ -866,13 +869,39 @@ export default function WeddingInvite() {
 
           <div className="mt-6 flex justify-center">
             <a 
-              href="https://maps.google.com/?q=Aura+Banquet+Hall+Giriraj+Nagar+Dholai+Jaipur" 
+              href={venueMapsUrl} 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-stone-100 hover:bg-stone-200 text-stone-800 px-5 py-2.5 rounded-full text-xs font-sans tracking-wider uppercase transition-colors"
             >
               <Navigation size={14} className="text-rose-500" /> Get Directions
             </a>
+          </div>
+
+          {/* QR CODE CARD */}
+          <div className="mt-8 mx-auto max-w-xs bg-white/95 rounded-2xl p-5 border border-amber-200/80 shadow-sm relative group hover:shadow-md transition-shadow">
+            <RoyalCorner position="top-left" />
+            <RoyalCorner position="top-right" />
+            <RoyalCorner position="bottom-left" />
+            <RoyalCorner position="bottom-right" />
+            
+            <div className="flex items-center justify-center gap-2 text-xs font-sans tracking-wider uppercase text-[#831828] font-semibold mb-3">
+              <QrCode size={16} />
+              <span>Scan for Venue Location</span>
+            </div>
+
+            <div className="bg-[#faf5ee] p-3 rounded-xl border border-stone-200/80 inline-block shadow-inner">
+              <img 
+                src={venueQrCodeUrl} 
+                alt="Scan QR code for Google Maps venue location" 
+                className="w-40 h-40 object-contain mx-auto rounded-lg"
+                loading="lazy"
+              />
+            </div>
+
+            <p className="text-[11px] text-stone-500 font-sans mt-3">
+              Scan with your phone camera to open directly in Google Maps for live navigation.
+            </p>
           </div>
 
           <div className="mt-8 rounded-2xl overflow-hidden border border-stone-200 aspect-video max-w-2xl mx-auto shadow-sm">
