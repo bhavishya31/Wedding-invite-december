@@ -23,25 +23,6 @@ import { motion } from 'framer-motion';
 const MEHENDI_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
 const HALDI_ANGLES = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
 
-/* ORNAMENTAL CORNER BORDER COMPONENT */
-const RoyalCorner = ({ position = "top-left" }) => {
-  const positionClasses = {
-    "top-left": "top-3 left-3",
-    "top-right": "top-3 right-3 rotate-90",
-    "bottom-right": "bottom-3 right-3 rotate-180",
-    "bottom-left": "bottom-3 left-3 -rotate-90",
-  };
-
-  return (
-    <div className={`absolute ${positionClasses[position] || ""} pointer-events-none text-amber-400`}>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 22V6C2 3.79086 3.79086 2 6 2H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="6" cy="6" r="2" fill="currentColor" />
-      </svg>
-    </div>
-  );
-};
-
 /* AUSPICIOUS LORD GANESHA LOGO */
 const LordGaneshaLogo = ({ className = "w-14 h-14" }) => (
   <svg viewBox="0 0 80 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,6 +160,24 @@ const RoyalHorse = ({ className = "w-12 h-12" }) => (
   </svg>
 );
 
+/* ORNAMENTAL CORNER BORDER COMPONENT */
+const RoyalCorner = ({ position = "top-left" }) => {
+  const styles = {
+    "top-left": "top-2 left-2",
+    "top-right": "top-2 right-2 rotate-90",
+    "bottom-left": "bottom-2 left-2 -rotate-90",
+    "bottom-right": "bottom-2 right-2 rotate-180"
+  };
+  return (
+    <div className={`absolute ${styles[position]} pointer-events-none w-7 h-7 text-amber-500/50`}>
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M2 38 L2 14 C2 7.37 7.37 2 14 2 L38 2" />
+        <path d="M8 38 L8 16 C8 11.58 11.58 8 16 8 L38 8" strokeDasharray="2 3" />
+        <circle cx="16" cy="16" r="3" fill="currentColor" fillOpacity="0.4" />
+      </svg>
+    </div>
+  );
+};
 
 /* CEREMONY LOGO ICONS */
 const GaneshPujaIcon = () => (
@@ -567,17 +566,18 @@ export default function WeddingInvite() {
 
   return (
     <div 
-      className="min-h-screen bg-[#FAF7F2] text-[#2C2523] font-serif antialiased overflow-x-hidden relative selection:bg-[#831828]/10 selection:text-[#831828]"
+      className="min-h-screen bg-[#faf5ee] text-[#333333] font-serif antialiased overflow-x-hidden relative selection:bg-[#831828]/10 selection:text-[#831828]"
       style={{
         backgroundImage: `
-          radial-gradient(circle at top center, rgba(245, 239, 230, 0.8) 0%, transparent 60%),
-          radial-gradient(circle at 10% 30%, rgba(242, 232, 220, 0.5) 0%, transparent 40%),
-          radial-gradient(circle at 90% 80%, rgba(240, 230, 216, 0.5) 0%, transparent 40%)
+          radial-gradient(circle at top right, rgba(131, 24, 40, 0.06), transparent 45%),
+          radial-gradient(circle at bottom left, rgba(217, 119, 6, 0.07), transparent 45%),
+          url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23831828' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M40 0 C45 15 65 15 70 0 C80 20 60 40 40 40 C20 40 0 20 10 0 C15 15 35 15 40 0 Z'/%3E%3Cpath d='M40 80 C45 65 65 65 70 80 C80 60 60 40 40 40 C20 40 0 60 10 80 C15 65 35 65 40 80 Z'/%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='40' cy='40' r='8' stroke='%23D97706' stroke-opacity='0.05' fill='none'/%3E%3Ccircle cx='0' cy='40' r='3'/%3E%3Ccircle cx='80' cy='40' r='3'/%3E%3C/g%3E%3C/svg%3E")
         `,
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* CLEAN AESTHETIC THEME - NO FRAMES, NO GARLANDS */}
+      {/* Top Heritage Border Accent */}
+      <div className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#58111A] via-amber-500 to-[#58111A] z-40" />
       
       {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
       {!isInvitationOpened && (
@@ -587,6 +587,11 @@ export default function WeddingInvite() {
             <RoyalCorner position="top-right" />
             <RoyalCorner position="bottom-left" />
             <RoyalCorner position="bottom-right" />
+
+            {/* Floating Band Baaja Sticker on Modal Corner */}
+            <div className="absolute -top-2 -right-2 md:top-2 md:right-2 rotate-12 z-20 hover:rotate-0 transition-transform">
+              <BandBaajaSticker className="w-16 h-16 md:w-20 md:h-20" showLabel={true} />
+            </div>
 
             {/* Floating Heritage Watermark Icons in Card */}
             <div className="absolute top-4 left-6 opacity-15 text-amber-800 pointer-events-none">
@@ -642,7 +647,7 @@ export default function WeddingInvite() {
       )}
 
       {/* FLOATING ACTION BUTTONS */}
-      <div className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50 flex flex-col items-end gap-2 sm:gap-3">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-2 sm:gap-3">
         <button
           onClick={handleShare}
           className="flex items-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-md text-gray-700 px-3 py-2 sm:px-4 sm:py-2.5 rounded-full shadow-lg border border-amber-200 hover:bg-stone-50 transition-all text-[11px] sm:text-xs font-sans tracking-wider uppercase"
@@ -671,17 +676,17 @@ export default function WeddingInvite() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden z-10">
+      <section className="relative flex flex-col items-center justify-center min-h-screen px-4 text-center overflow-hidden">
         {/* BACKGROUND IMAGE & OVERLAYS */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src={heroImageSrc} 
             alt="Bhavna & Devansh" 
-            className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[0.98] scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-center filter brightness-[0.88] scale-105 transition-transform duration-1000"
             onError={handleImageFallback}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F2]/90 via-[#FAF7F2]/75 to-[#FAF7F2]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,253,250,0.8)_0%,transparent_85%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f2]/80 via-[#faf7f2]/55 to-[#faf7f2]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,241,242,0.6)_0%,transparent_80%)] pointer-events-none" />
 
           {/* Royal Heritage Watermarks in Hero */}
           <div className="absolute bottom-6 left-6 opacity-20 text-amber-800 pointer-events-none hidden md:block">
@@ -772,7 +777,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* COUNTDOWN TIMER */}
-      <section id="countdown" className="py-16 sm:py-24 bg-[#FAF7F2] relative z-10">
+      <section id="countdown" className="py-14 sm:py-20 bg-white/70 backdrop-blur-sm border-y border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 md:gap-5 mb-3">
             <BandBaajaSticker className="w-9 h-9 md:w-11 md:h-11 -rotate-12" />
@@ -787,7 +792,7 @@ export default function WeddingInvite() {
           
           <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 max-w-lg mx-auto">
             {Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label} className="bg-[#FFFDF9] rounded-2xl p-3 sm:p-5 md:p-6 border border-[#EBE3D8] shadow-[0_4px_20px_rgba(0,0,0,0.02)] relative overflow-hidden">
+              <div key={label} className="bg-[#faf8f5] rounded-2xl p-2.5 sm:p-4 md:p-6 border border-amber-200/50 shadow-sm relative overflow-hidden">
                 <span className="block text-2xl sm:text-3xl md:text-5xl font-light text-[#831828] font-mono tracking-tight">{isMounted ? String(value).padStart(2, '0') : "00"}</span>
                 <span className="text-[10px] sm:text-xs uppercase tracking-wider text-gray-400 block mt-1">{label}</span>
               </div>
@@ -797,7 +802,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* OUR STORY SECTION */}
-      <section className="py-24 sm:py-32 max-w-3xl mx-auto px-6 text-center relative z-10">
+      <section className="py-24 max-w-3xl mx-auto px-6 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="space-y-6">
           <div className="flex justify-center mb-2">
             <BrideGroomLogo className="w-24 h-24 md:w-28 md:h-28 mx-auto drop-shadow-sm hover:scale-105 transition-transform" />
@@ -814,7 +819,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE CELEBRATIONS TIMELINE */}
-      <section className="py-24 sm:py-32 bg-[#F5EFE6]/70 relative z-10">
+      <section className="py-24 bg-[#f6eee3]/80 backdrop-blur-sm border-t border-amber-200/70">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-sans tracking-[0.3em] text-[#831828] uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
@@ -846,7 +851,7 @@ export default function WeddingInvite() {
                   onClick={() => setActiveDayFilter(tab.key)}
                   className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-sans tracking-wider uppercase transition-all duration-200 ${
                     activeDayFilter === tab.key
-                      ? 'bg-[#831828] text-white shadow-sm'
+                      ? 'bg-[#831828] text-white shadow-md shadow-amber-900/20'
                       : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
                   }`}
                 >
@@ -861,9 +866,9 @@ export default function WeddingInvite() {
               .filter((day) => activeDayFilter === 'all' || activeDayFilter === day.dayKey)
               .map((day, dIdx) => (
                 <div key={dIdx} className="space-y-8">
-                  <div className="flex items-center gap-4 max-w-md mx-auto">
+                  <div className="flex items-center gap-4">
                     <div className="h-[1px] bg-gradient-to-r from-transparent to-rose-200 flex-1"></div>
-                    <div className="text-center px-6 py-2 bg-[#FFFDF9] rounded-full border border-[#E9E1D5] shadow-xs">
+                    <div className="text-center px-6 py-2 bg-white rounded-full border border-amber-200 shadow-sm">
                       <span className="text-[11px] font-sans tracking-widest uppercase text-rose-600 font-semibold block">{day.dayLabel}</span>
                       <h3 className="text-lg md:text-xl font-light text-gray-800 tracking-wider">{day.date}</h3>
                     </div>
@@ -885,8 +890,10 @@ export default function WeddingInvite() {
                           whileInView="visible" 
                           viewport={{ once: true, margin: "-50px" }} 
                           variants={fadeInUp}
-                          className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 border border-[#EAE2D6] shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_35px_rgba(0,0,0,0.06)] transition-all relative overflow-hidden flex flex-col justify-between group hover:border-amber-300"
+                          className="bg-white rounded-3xl p-5 sm:p-7 md:p-8 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all relative overflow-hidden flex flex-col justify-between group hover:border-amber-300"
                         >
+                          <RoyalCorner position="top-left" />
+                          <RoyalCorner position="top-right" />
                           
                           {/* TOP LOGO EMBLEM */}
                           <div className="flex flex-col items-center text-center">
@@ -937,7 +944,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* THE VENUE MAP */}
-      <section className="py-24 sm:py-32 bg-[#FAF7F2] relative z-10">
+      <section className="py-24 bg-white/70 backdrop-blur-sm border-t border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-3xl mx-auto px-6 text-center">
           <MapPin className="mx-auto text-rose-400 mb-4" size={32} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-3">The Venue</h2>
@@ -958,14 +965,23 @@ export default function WeddingInvite() {
           </div>
 
           {/* QR CODE CARD */}
-          <div className="mt-8 mx-auto max-w-xs bg-[#FFFDF9] rounded-2xl p-6 border border-[#EAE2D6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] group hover:shadow-md transition-shadow">
+          <div className="mt-8 mx-auto max-w-xs bg-white/95 rounded-2xl p-5 border border-amber-200/80 shadow-sm relative group hover:shadow-md transition-shadow">
+            <RoyalCorner position="top-left" />
+            <RoyalCorner position="top-right" />
+            <RoyalCorner position="bottom-left" />
+            <RoyalCorner position="bottom-right" />
+            
+            {/* Band Baaja Sticker on QR card */}
+            <div className="absolute -top-4 -right-4 rotate-12 z-20 pointer-events-none">
+              <BandBaajaSticker className="w-12 h-12" showLabel={false} />
+            </div>
 
             <div className="flex items-center justify-center gap-2 text-xs font-sans tracking-wider uppercase text-[#831828] font-semibold mb-3">
               <QrCode size={16} />
               <span>Scan for Venue Location</span>
             </div>
 
-            <div className="bg-[#FAF7F2] p-3 rounded-xl border border-stone-200/80 inline-block shadow-xs">
+            <div className="bg-[#faf5ee] p-3 rounded-xl border border-stone-200/80 inline-block shadow-inner">
               <img 
                 src={venueQrCodeUrl} 
                 alt="Scan QR code for Google Maps venue location" 
@@ -982,7 +998,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* STAY & GUEST ASSISTANCE */}
-      <section className="py-20 bg-[#F4EDE2]/70 relative z-10">
+      <section className="py-16 bg-[#f7efe4]/85 backdrop-blur-sm border-t border-amber-200/60">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h3 className="text-lg font-medium text-gray-800 mb-2">Need Help or Directions?</h3>
           <p className="text-stone-500 font-sans text-xs md:text-sm mb-6">
@@ -1002,14 +1018,18 @@ export default function WeddingInvite() {
       </section>
 
       {/* RSVP FORM */}
-      <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6 relative z-10">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-[#FFFDF9] rounded-3xl p-6 sm:p-8 md:p-12 shadow-[0_10px_35px_rgba(0,0,0,0.03)] border border-[#EAE2D6] text-center">
+      <section id="rsvp" className="py-24 max-w-2xl mx-auto px-6">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 shadow-md border border-amber-200/80 text-center">
           <Heart className="mx-auto text-rose-300 mb-4 fill-rose-100" size={28} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Will You Attend?</h2>
           <p className="text-sm text-gray-500 font-sans mb-8">Kindly RSVP so we can prepare for your arrival</p>
 
           {submitted ? (
-            <div className="py-12 px-6 bg-[#52131D] text-amber-100 rounded-2xl border border-amber-400/30 flex flex-col items-center shadow-lg relative overflow-hidden">
+            <div className="py-12 px-6 bg-[#4a0e17] text-amber-100 rounded-2xl border-2 border-amber-400/50 flex flex-col items-center shadow-lg relative overflow-hidden">
+              <RoyalCorner position="top-left" />
+              <RoyalCorner position="top-right" />
+              <RoyalCorner position="bottom-left" />
+              <RoyalCorner position="bottom-right" />
               <CheckCircle2 size={46} className="text-amber-300 mb-3" />
               <p className="text-2xl md:text-3xl text-amber-100 font-serif italic">Khamma Ghani &amp; Thank You!</p>
               <p className="text-amber-200/90 text-sm font-sans mt-2 max-w-md text-center leading-relaxed">
@@ -1124,7 +1144,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* CLOSING / THANK YOU & BLESSINGS SECTION (ROYAL JAIPUR MAROON THEME) */}
-      <section className="py-24 bg-[#3E1118] text-amber-100 text-center relative overflow-hidden z-10">
+      <section className="py-20 bg-[#4a0e17] text-amber-100 text-center relative overflow-hidden border-t-4 border-amber-400/60">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.18)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 space-y-4">
           <div className="flex items-center justify-center gap-3 md:gap-4 text-amber-300/80 mb-2">
@@ -1134,16 +1154,14 @@ export default function WeddingInvite() {
             <RoyalHorse className="w-8 h-8" />
             <BandBaajaSticker className="w-10 h-10 md:w-12 md:h-12 rotate-12" />
           </div>
-          <span className="text-xs font-sans tracking-[0.3em] text-amber-300 uppercase font-semibold block">
-            ॥ मङ्गलं भगवान् विष्णुः मङ्गलं गरुडध्वजः ॥ • Two Hearts • Seven Vows • Forever Bound
+          <span className="text-xs font-sans tracking-[0.35em] text-amber-300 uppercase font-semibold block">
+            पधारो म्हारे देश • Padharo Mhare Desh
           </span>
           <h2 className="text-3xl md:text-5xl font-light font-serif text-amber-50 tracking-wider">
-            Thank You for Blessing Our Union
+            Thank You for Blessing Us
           </h2>
           <p className="text-sm md:text-base text-amber-200/90 font-serif italic max-w-lg mx-auto leading-relaxed">
-            &ldquo;In the circle of love, two lives intertwine and two souls become one.&rdquo;
-            <br />
-            Your presence, warm prayers, and heartfelt blessings make our wedding celebrations complete and truly unforgettable.
+            Your love, presence, and blessings make our holy union in Jaipur truly timeless and memorable.
           </p>
           <div className="pt-2 flex items-center justify-center gap-3">
             <span className="h-[1px] w-12 bg-amber-400/40" />
@@ -1154,7 +1172,7 @@ export default function WeddingInvite() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-8 bg-[#2A0A10] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase relative z-10">
+      <footer className="py-8 bg-[#36080e] text-center text-xs text-amber-200/60 font-sans tracking-widest uppercase border-t border-amber-400/20">
         <p className="mb-2">MADE WITH ❤️ FOR BHAVNA &amp; DEVANSH</p>
         <p className="text-[11px] text-amber-300/70 tracking-normal font-serif italic normal-case">
           3 – 4 December 2026 • Aura Banquet Hall, Jaipur, Rajasthan
