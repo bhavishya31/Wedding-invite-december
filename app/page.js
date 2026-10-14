@@ -82,6 +82,55 @@ const BrideGroomLogo = ({ className = "w-20 h-20" }) => (
   </svg>
 );
 
+/* FESTIVE BAND BAAJA STICKER EMBLEM */
+const BandBaajaSticker = ({ className = "w-16 h-16", showLabel = false }) => (
+  <div className={`relative inline-flex flex-col items-center select-none ${className}`}>
+    <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Decorative Golden Sunburst / Rosette Backdrop */}
+      <circle cx="50" cy="50" r="45" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="1.8" strokeDasharray="3 3" />
+      <circle cx="50" cy="50" r="40" fill="#FEF3C7" opacity="0.65" />
+      <circle cx="50" cy="50" r="36" stroke="#DC2626" strokeWidth="1" opacity="0.35" />
+      
+      {/* Shehnai (Angled Woodwind) */}
+      <g transform="rotate(-30 50 50)">
+        <path d="M50 16 L48 66 L42 76 L58 76 L52 66 L50 16 Z" fill="#D97706" stroke="#92400E" strokeWidth="1" />
+        <ellipse cx="50" cy="76" rx="8" ry="3" fill="#DC2626" />
+        <circle cx="50" cy="30" r="1.5" fill="#FEF3C7" />
+        <circle cx="50" cy="40" r="1.5" fill="#FEF3C7" />
+        <circle cx="50" cy="50" r="1.5" fill="#FEF3C7" />
+        <circle cx="50" cy="60" r="1.5" fill="#FEF3C7" />
+      </g>
+      
+      {/* Royal Trumpet / Brass Tutari Horn */}
+      <g transform="rotate(25 50 50)">
+        <path d="M30 75 Q28 40 50 25 Q68 12 75 20 Q70 30 55 35 Q40 40 42 75 Z" fill="#F59E0B" stroke="#B45309" strokeWidth="1.2" />
+        <ellipse cx="74" cy="18" rx="6" ry="4" transform="rotate(-30 74 18)" fill="#DC2626" stroke="#991B1B" strokeWidth="0.8" />
+      </g>
+      
+      {/* Festive Dholak / Drum in Center */}
+      <g transform="translate(0, 4)">
+        <ellipse cx="50" cy="52" rx="18" ry="12" fill="#831828" stroke="#F59E0B" strokeWidth="1.5" />
+        <ellipse cx="32" cy="52" rx="4" ry="10" fill="#FEF3C7" stroke="#78350F" strokeWidth="1.2" />
+        <ellipse cx="68" cy="52" rx="4" ry="10" fill="#FEF3C7" stroke="#78350F" strokeWidth="1.2" />
+        <path d="M36 44 L64 58 M36 60 L64 46" stroke="#FEF08A" strokeWidth="1" />
+        <circle cx="50" cy="52" r="3" fill="#F59E0B" />
+      </g>
+      
+      {/* Auspicious Musical Notes & Sparkles */}
+      <path d="M22 28 Q24 22 29 24 L29 34 M25 34 A2 2 0 1 1 23 32" stroke="#DC2626" strokeWidth="1.5" fill="#DC2626" />
+      <path d="M72 68 Q74 62 79 64 L79 74 M75 74 A2 2 0 1 1 73 72" stroke="#D97706" strokeWidth="1.5" fill="#D97706" />
+      <circle cx="78" cy="38" r="1.8" fill="#DC2626" />
+      <circle cx="20" cy="56" r="1.8" fill="#F59E0B" />
+      <circle cx="48" cy="12" r="2" fill="#E11D48" />
+    </svg>
+    {showLabel && (
+      <span className="mt-1 bg-gradient-to-r from-[#831828] to-[#991B1B] text-amber-200 text-[9px] font-sans font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full border border-amber-300 shadow-sm whitespace-nowrap">
+        🎺 Band Baaja 🥁
+      </span>
+    )}
+  </div>
+);
+
 /* ROYAL RAJASTHANI MOTIF ARTWORK (Elephant, Camel, Horse) */
 const RoyalElephant = ({ className = "w-12 h-12" }) => (
   <svg viewBox="0 0 100 80" className={className} fill="currentColor">
@@ -539,6 +588,11 @@ export default function WeddingInvite() {
             <RoyalCorner position="bottom-left" />
             <RoyalCorner position="bottom-right" />
 
+            {/* Floating Band Baaja Sticker on Modal Corner */}
+            <div className="absolute -top-2 -right-2 md:top-2 md:right-2 rotate-12 z-20 hover:rotate-0 transition-transform">
+              <BandBaajaSticker className="w-16 h-16 md:w-20 md:h-20" showLabel={true} />
+            </div>
+
             {/* Floating Heritage Watermark Icons in Card */}
             <div className="absolute top-4 left-6 opacity-15 text-amber-800 pointer-events-none">
               <RoyalElephant className="w-12 h-12" />
@@ -644,6 +698,14 @@ export default function WeddingInvite() {
           <div className="absolute top-1/2 left-8 -translate-y-1/2 opacity-15 text-amber-800 pointer-events-none hidden lg:block">
             <RoyalHorse className="w-24 h-24" />
           </div>
+
+          {/* Band Baaja Festive Stickers in Hero */}
+          <div className="absolute top-28 right-4 md:right-16 z-20 rotate-12 hidden sm:block hover:rotate-0 transition-transform">
+            <BandBaajaSticker className="w-20 h-20 md:w-24 md:h-24" showLabel={true} />
+          </div>
+          <div className="absolute bottom-24 left-4 md:left-14 z-20 -rotate-12 hidden sm:block hover:rotate-0 transition-transform">
+            <BandBaajaSticker className="w-16 h-16 md:w-20 md:h-20" showLabel={false} />
+          </div>
         </div>
         
         <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="space-y-6 max-w-3xl z-10">
@@ -705,10 +767,12 @@ export default function WeddingInvite() {
       {/* COUNTDOWN TIMER */}
       <section id="countdown" className="py-20 bg-white/70 backdrop-blur-sm border-y border-amber-200/60">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-3xl mx-auto px-4 text-center">
-          <div className="flex items-center justify-center gap-4 mb-3">
+          <div className="flex items-center justify-center gap-3 md:gap-5 mb-3">
+            <BandBaajaSticker className="w-9 h-9 md:w-11 md:h-11 -rotate-12" />
             <RoyalCamel className="w-7 h-7 text-amber-600/60" />
             <RoyalElephant className="w-8 h-8 text-rose-500/70" />
             <RoyalHorse className="w-7 h-7 text-amber-600/60" />
+            <BandBaajaSticker className="w-9 h-9 md:w-11 md:h-11 rotate-12" />
           </div>
           <Sparkles className="mx-auto text-rose-400 mb-3" size={24} />
           <h2 className="text-2xl md:text-3xl font-light tracking-widest text-gray-800 uppercase mb-2">Counting Down To Forever</h2>
@@ -747,7 +811,11 @@ export default function WeddingInvite() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-sans tracking-[0.3em] text-[#831828] uppercase block font-semibold mb-2">Itinerary &amp; Events</span>
-            <h2 className="text-3xl md:text-5xl font-light tracking-widest text-gray-800 uppercase">The Celebrations</h2>
+            <div className="flex items-center justify-center gap-3">
+              <BandBaajaSticker className="w-11 h-11 -rotate-6 hidden sm:inline-flex" />
+              <h2 className="text-3xl md:text-5xl font-light tracking-widest text-gray-800 uppercase">The Celebrations</h2>
+              <BandBaajaSticker className="w-11 h-11 rotate-6 hidden sm:inline-flex" />
+            </div>
             <div className="flex items-center justify-center gap-2 mt-4">
               <span className="h-[1px] w-12 bg-rose-300"></span>
               <span className="text-rose-400 text-xs">❦</span>
@@ -891,6 +959,11 @@ export default function WeddingInvite() {
             <RoyalCorner position="bottom-left" />
             <RoyalCorner position="bottom-right" />
             
+            {/* Band Baaja Sticker on QR card */}
+            <div className="absolute -top-4 -right-4 rotate-12 z-20 pointer-events-none">
+              <BandBaajaSticker className="w-12 h-12" showLabel={false} />
+            </div>
+
             <div className="flex items-center justify-center gap-2 text-xs font-sans tracking-wider uppercase text-[#831828] font-semibold mb-3">
               <QrCode size={16} />
               <span>Scan for Venue Location</span>
@@ -1062,10 +1135,12 @@ export default function WeddingInvite() {
       <section className="py-20 bg-[#4a0e17] text-amber-100 text-center relative overflow-hidden border-t-4 border-amber-400/60">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.18)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 space-y-4">
-          <div className="flex items-center justify-center gap-4 text-amber-300/80 mb-2">
+          <div className="flex items-center justify-center gap-3 md:gap-4 text-amber-300/80 mb-2">
+            <BandBaajaSticker className="w-10 h-10 md:w-12 md:h-12 -rotate-12" />
             <RoyalCamel className="w-8 h-8" />
             <RoyalElephant className="w-9 h-9" />
             <RoyalHorse className="w-8 h-8" />
+            <BandBaajaSticker className="w-10 h-10 md:w-12 md:h-12 rotate-12" />
           </div>
           <span className="text-xs font-sans tracking-[0.35em] text-amber-300 uppercase font-semibold block">
             पधारो म्हारे देश • Padharo Mhare Desh
