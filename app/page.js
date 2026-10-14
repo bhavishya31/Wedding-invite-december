@@ -131,63 +131,6 @@ const BandBaajaSticker = ({ className = "w-16 h-16", showLabel = false }) => (
   </div>
 );
 
-/* WEDDING FLORAL GARLAND & FLOWER CORNERS (GENDA, ROSES & JASMINE STRINGS) */
-const CornerGarland = ({ position = "top-left" }) => {
-  const posClass = {
-    "top-left": "top-0 left-0",
-    "top-right": "top-0 right-0 scale-x-[-1]",
-    "bottom-left": "bottom-0 left-0 scale-y-[-1]",
-    "bottom-right": "bottom-0 right-0 scale-x-[-1] scale-y-[-1]"
-  }[position];
-
-  return (
-    <div className={`fixed ${posClass} pointer-events-none z-40 w-32 h-32 sm:w-44 sm:h-44 md:w-52 md:h-52 drop-shadow-md select-none`}>
-      <svg viewBox="0 0 160 160" fill="none" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        {/* Background Mango / Paan Leaf Cluster */}
-        <path d="M10 2 C18 18 16 38 4 52 C22 46 36 34 38 18 Z" fill="#15803D" opacity="0.85" />
-        <path d="M2 10 C18 18 38 16 52 4 C46 22 34 36 18 38 Z" fill="#166534" opacity="0.85" />
-        <path d="M22 22 C34 40 48 48 68 44 C56 60 38 62 20 48 Z" fill="#047857" opacity="0.75" />
-
-        {/* Main Swag Garland Arc (Marigold & Jasmine Toran String) */}
-        <path d="M0 68 Q46 64 68 0" stroke="#B45309" strokeWidth="2.5" strokeDasharray="2 3" />
-        <path d="M0 110 Q78 100 110 0" stroke="#D97706" strokeWidth="2" strokeDasharray="2 4" />
-
-        {/* Hanging Jasmine / Mogra Flower Strings */}
-        <g stroke="#FDE68A" strokeWidth="1.5">
-          <line x1="18" y1="62" x2="18" y2="108" />
-          <line x1="36" y1="52" x2="36" y2="128" />
-          <line x1="56" y1="38" x2="56" y2="114" />
-          <line x1="82" y1="22" x2="82" y2="88" />
-        </g>
-        {/* Jasmine Flower Buds on Strings */}
-        {[
-          [18, 72], [18, 86], [18, 100],
-          [36, 66], [36, 82], [36, 98], [36, 114],
-          [56, 52], [56, 70], [56, 88], [56, 104],
-          [82, 38], [82, 56], [82, 74]
-        ].map(([cx, cy], idx) => (
-          <circle key={idx} cx={cx} cy={cy} r="3" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="0.8" />
-        ))}
-
-        {/* Marigold Blooms on the Arch (Golden Saffron & Yellow Genda Phool) */}
-        <circle cx="12" cy="62" r="11" fill="#EA580C" stroke="#B45309" strokeWidth="1.2" />
-        <circle cx="12" cy="62" r="7" fill="#FACC15" />
-        <circle cx="34" cy="46" r="13" fill="#F59E0B" stroke="#B45309" strokeWidth="1.2" />
-        <circle cx="34" cy="46" r="8" fill="#FDE047" />
-        <circle cx="58" cy="28" r="12" fill="#D97706" stroke="#92400E" strokeWidth="1.2" />
-        <circle cx="58" cy="28" r="7" fill="#FACC15" />
-        <circle cx="82" cy="12" r="10" fill="#EA580C" stroke="#B45309" strokeWidth="1.2" />
-        <circle cx="82" cy="12" r="6" fill="#FDE047" />
-
-        {/* Royal Red Rose Centerpiece at the Topmost Apex */}
-        <circle cx="20" cy="20" r="14" fill="#BE123C" stroke="#881337" strokeWidth="1.5" />
-        <circle cx="20" cy="20" r="9" fill="#E11D48" />
-        <circle cx="20" cy="20" r="4" fill="#FFE4E6" />
-      </svg>
-    </div>
-  );
-};
-
 /* ROYAL RAJASTHANI MOTIF ARTWORK (Elephant, Camel, Horse) */
 const RoyalElephant = ({ className = "w-12 h-12" }) => (
   <svg viewBox="0 0 100 80" className={className} fill="currentColor">
@@ -657,12 +600,6 @@ export default function WeddingInvite() {
         </div>
       </div>
 
-      {/* CORNER FLORAL GARLANDS ON ALL FOUR CORNERS */}
-      <CornerGarland position="top-left" />
-      <CornerGarland position="top-right" />
-      <CornerGarland position="bottom-left" />
-      <CornerGarland position="bottom-right" />
-      
       {/* INTERACTIVE ROYAL ENVELOPE / GREETING CARD MODAL */}
       {!isInvitationOpened && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-stone-900/80 backdrop-blur-md transition-all duration-700">
