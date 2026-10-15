@@ -871,7 +871,7 @@ const CELEBRATIONS = [
     events: [
       {
         id: "ganesh-puja",
-        time: "7:00 AM",
+        time: "06:00 AM",
         title: "Ganesh Nimantran",
         tagline: "Auspicious Beginnings",
         attire: "Traditional Yellow / Pavitra Ethnic",
@@ -889,18 +889,6 @@ const CELEBRATIONS = [
     dayKey: "day1",
     events: [
       {
-        id: "mehendi",
-        time: "10:00 AM",
-        title: "Mehendi Ceremony",
-        tagline: "Henna, Folk & Celebrations",
-        attire: "Floral Vibes & Shades of Green",
-        desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
-        logo: <MehendiIcon />,
-        badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
-        ringColor: "ring-emerald-200/80 bg-emerald-50/70",
-        calDates: "20261202T043000Z/20261202T070000Z"
-      },
-      {
         id: "chaak",
         time: "11:00 AM",
         title: "Chaak Ceremony",
@@ -911,7 +899,19 @@ const CELEBRATIONS = [
         badgeColor: "bg-orange-500/10 text-orange-900 border-orange-300",
         ringColor: "ring-orange-200/80 bg-orange-50/70",
         calDates: "20261202T053000Z/20261202T083000Z"
-      },         
+      },        
+      {
+        id: "mehendi",
+        time: "03:00 PM",
+        title: "Mehendi Ceremony",
+        tagline: "Henna, Folk & Celebrations",
+        attire: "Floral Vibes & Shades of Green",
+        desc: "An afternoon rich with intricate henna designs, soulful folk melodies, sweets, and joyous celebration.",
+        logo: <MehendiIcon />,
+        badgeColor: "bg-emerald-500/10 text-emerald-800 border-emerald-300",
+        ringColor: "ring-emerald-200/80 bg-emerald-50/70",
+        calDates: "20261202T043000Z/20261202T070000Z"
+      },       
     ] 
   },
   {
@@ -952,7 +952,7 @@ const CELEBRATIONS = [
     events: [
       {
         id: "carnival",
-        time: "10:00 AM",
+        time: "11:00 AM",
         title: "Carnival Dance",
         tagline: "Where Love Meets the Carnival Spirit",
         attire: "Rajasthani Outfit",
@@ -964,7 +964,7 @@ const CELEBRATIONS = [
       },      
       {
         id: "baraat-swagat",
-        time: "06:00 PM",
+        time: "08:00 PM",
         title: "Baraat Swagat & Dhol Tasha",
         tagline: "Beats, Brass & Grand Welcome",
         attire: "Royal Elegance / Bandhgala & Vibrant Safa",
