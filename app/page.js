@@ -1028,7 +1028,7 @@ export default function WeddingInvite() {
 
   useEffect(() => {
     setIsMounted(true);
-    audioRef.current = new Audio('/paulyudin-wedding-piano-162472.mp3'); 
+    audioRef.current = new Audio('/Chaand Taare_1.mp3'); 
     audioRef.current.loop = true;
 
     const timer = setInterval(() => {
