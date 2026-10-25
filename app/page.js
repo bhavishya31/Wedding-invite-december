@@ -1215,7 +1215,10 @@ export default function WeddingInvite() {
                       <Heart className="w-8 h-8 fill-white/90 animate-pulse text-white drop-shadow-md" />
                     </div>
                   </div>
-                  <span className="mt-3 text-xs font-sans tracking-[0.25em] text-[#831828] uppercase font-semibold group-hover:text-amber-700">
+                  <span className="mt-3 text-xs font-sans tracking-[0.25em] text-[#831828] uppercase font-bold group-hover:text-amber-700">
+                    Tap to Open
+                  </span>
+                  <span className="mt-1 text-[11px] font-sans tracking-[0.2em] text-stone-500 uppercase font-medium">
                     Khamma Ghani • Open Invitation ❦
                   </span>
                 </button>
