@@ -1666,7 +1666,7 @@ export default function WeddingInvite() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-xs font-sans">
             <a 
-              href="https://wa.me/qr/Z63M2WXI7AGOG1" 
+              href="https://chat.whatsapp.com/FmVaqeFTbJo1NcmMamFUab?s=sh&p=a&mlu=4&ilr=4" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-stone-300 bg-white px-5 py-2.5 rounded-full hover:bg-stone-50 transition-colors text-stone-700"
